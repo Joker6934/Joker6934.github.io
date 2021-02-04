@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://joker6934.github.io/</id>
     <title>Jokerの小站</title>
-    <updated>2021-02-04T14:28:07.774Z</updated>
+    <updated>2021-02-04T14:45:59.920Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://joker6934.github.io/"/>
     <link rel="self" href="https://joker6934.github.io/atom.xml"/>
@@ -16,7 +16,8 @@
         <link href="https://joker6934.github.io/post/pycharm-he-idea-ji-huo/">
         </link>
         <updated>2021-02-04T14:00:59.000Z</updated>
-        <content type="html"><![CDATA[<p>长期更新激活码</p>
+        <content type="html"><![CDATA[<!-- more -->
+<p>长期更新激活码</p>
 <p><strong><strong>使用方法</strong></strong>：</p>
 <p>1.安装（以Pycharm为例）</p>
 <p>下载地址：<a href="https://www.jetbrains.com/pycharm/">https://www.jetbrains.com/pycharm/</a></p>
@@ -44,6 +45,21 @@
 <p>重启...</p>
 <p>然后查看剩余使用时间<img src="https://joker6934.github.io//post-images/1612447547332.png" alt="" loading="lazy"></p>
 <p><strong><strong>完美！</strong></strong></p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[关于]]></title>
+        <id>https://joker6934.github.io/post/about/</id>
+        <link href="https://joker6934.github.io/post/about/">
+        </link>
+        <updated>2019-01-25T11:09:48.000Z</updated>
+        <content type="html"><![CDATA[<blockquote>
+<p>欢迎来到我的小站呀，很高兴遇见你！🤝</p>
+</blockquote>
+<h2 id="关于本站">🏠 关于本站</h2>
+<h2 id="博主是谁">👨‍💻 博主是谁</h2>
+<h2 id="兴趣爱好">⛹ 兴趣爱好</h2>
+<h2 id="联系我呀">📬 联系我呀</h2>
 ]]></content>
     </entry>
     <entry>
