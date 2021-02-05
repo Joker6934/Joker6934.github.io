@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://joker6934.github.io/</id>
     <title>Jokerの小站</title>
-    <updated>2021-02-05T13:16:21.255Z</updated>
+    <updated>2021-02-05T13:20:48.486Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://joker6934.github.io/"/>
     <link rel="self" href="https://joker6934.github.io/atom.xml"/>
@@ -16,18 +16,22 @@
         <link href="https://joker6934.github.io/post/grideagithubping-lun-xi-tong/">
         </link>
         <updated>2021-02-05T11:10:26.000Z</updated>
-        <content type="html"><![CDATA[<p><code>最近想开始写博客了，上网查发现还是Gridea这种简单耐看的符合我的胃口，哈哈哈😃</code><br>
-<code>废话不多说，开始聊聊我在部署安装时候踩的坑和解决措施吧😭</code></p>
+        <summary type="html"><![CDATA[<p>最近想开始写博客了，上网查发现还是Gridea这种简单耐看的符合我的胃口，哈哈哈😃<br>
+废话不多说，开始聊聊我在部署安装时候踩的坑和解决措施吧😭</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>最近想开始写博客了，上网查发现还是Gridea这种简单耐看的符合我的胃口，哈哈哈😃<br>
+废话不多说，开始聊聊我在部署安装时候踩的坑和解决措施吧😭</p>
+<!-- more -->
 <h1 id="1gridea的安装">1.Gridea的安装</h1>
 <p>下载地址：<a href="https://github.com/getgridea/gridea">Github</a>或者<a href="https://gridea.dev/">Gridea官网</a></p>
-<h2 id="1github方式">（1）Github方式：</h2>
+<h2 id="1github方式">（1）Github方式</h2>
 <p><img src="https://joker6934.github.io//post-images/1612524456488.png" alt="" loading="lazy"><br>
 在这个页面往下滑，找到download<br>
 <img src="https://joker6934.github.io//post-images/1612524482163.png" alt="" loading="lazy"><br>
 <img src="https://joker6934.github.io//post-images/1612524488385.png" alt="" loading="lazy"><br>
 我现在的最新版本是0.9.2<br>
 我就下载了<code>.exe</code>文件，然后这样无脑安装就行了<img src="https://joker6934.github.io//post-images/1612524581942.png" alt="" loading="lazy"></p>
-<h2 id="2官网方式">（2）官网方式：</h2>
+<h2 id="2官网方式">（2）官网方式</h2>
 <p><img src="https://joker6934.github.io//post-images/1612524663979.png" alt="" loading="lazy"><br>
 点击立即开始，下载对应的版本<img src="https://joker6934.github.io//post-images/1612524692197.png" alt="" loading="lazy"></p>
 <h1 id="2配置github">2.配置GitHub</h1>
@@ -44,7 +48,7 @@
 <img src="https://joker6934.github.io//post-images/1612527532906.png" alt="" loading="lazy"></p>
 <h1 id="3配置gridea">3.配置Gridea</h1>
 <p>在Gridea上的基础设置如下，Token还没创建，等等创建</p>
-<h3 id="1创建token">（1）创建Token</h3>
+<h2 id="1创建token">(1)创建Token</h2>
 <p>按照下面的步骤就可<br>
 <img src="https://joker6934.github.io//post-images/1612528003397.png" alt="" loading="lazy"><br>
 <img src="https://joker6934.github.io//post-images/1612528033713.png" alt="" loading="lazy"><br>
@@ -55,7 +59,7 @@
 保存然后<code>同步</code>就OK了<br>
 <img src="https://joker6934.github.io//post-images/1612529463013.png" alt="" loading="lazy"><br>
 同步成功！！</p>
-<h3 id="2访问自己的网页">（2）访问自己的网页</h3>
+<h2 id="2访问自己的网页">(2)访问自己的网页</h2>
 <p>这时候网站其实已经搭好了，但是要在Github仓库里刷新一下才能看见，<code>一定要刷新啊啊啊</code><br>
 然后，仓库就这样了<br>
 <img src="https://joker6934.github.io//post-images/1612528310259.png" alt="" loading="lazy"><br>
