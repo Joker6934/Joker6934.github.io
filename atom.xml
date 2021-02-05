@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://joker6934.github.io/</id>
     <title>Jokerの小站</title>
-    <updated>2021-02-05T13:22:28.670Z</updated>
+    <updated>2021-02-05T13:25:20.011Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://joker6934.github.io/"/>
     <link rel="self" href="https://joker6934.github.io/atom.xml"/>
@@ -10,6 +10,18 @@
     <logo>https://joker6934.github.io/images/avatar.png</logo>
     <icon>https://joker6934.github.io/favicon.ico</icon>
     <rights>All rights reserved 2021, Jokerの小站</rights>
+    <entry>
+        <title type="html"><![CDATA[Python学习]]></title>
+        <id>https://joker6934.github.io/post/python-xue-xi/</id>
+        <link href="https://joker6934.github.io/post/python-xue-xi/">
+        </link>
+        <updated>2021-02-05T13:22:48.000Z</updated>
+        <summary type="html"><![CDATA[<p>复试需要，python必须学一下，用的书是蟒蛇书，《Python编程 从入门到实践 第二版》还有《Python程序设计 第二版 董付国著》</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>复试需要，python必须学一下，用的书是蟒蛇书，《Python编程 从入门到实践 第二版》还有《Python程序设计 第二版 董付国著》</p>
+<!-- more -->
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Gridea+Github+Gitalk评论系统]]></title>
         <id>https://joker6934.github.io/post/grideagithubping-lun-xi-tong/</id>
