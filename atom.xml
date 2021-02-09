@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://joker6934.github.io/</id>
     <title>Jokerの小站</title>
-    <updated>2021-02-05T13:41:18.676Z</updated>
+    <updated>2021-02-09T15:54:37.253Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://joker6934.github.io/"/>
     <link rel="self" href="https://joker6934.github.io/atom.xml"/>
@@ -20,6 +20,89 @@
 ]]></summary>
         <content type="html"><![CDATA[<p>复试需要，python必须学一下，用的书是蟒蛇书，《Python编程 从入门到实践 第二版》还有《Python程序设计 第二版 董付国著》</p>
 <!-- more -->
+<p>现在是2月6号了，我学到了蟒蛇书的9.3继承了，前几章还行，第八章有点难度了</p>
+<h1 id="29">2.9</h1>
+<h2 id="今天遇到了列表的比较找到了以下有关的比较方法">今天遇到了列表的比较，找到了以下有关的比较方法：</h2>
+<p>1.列表1 == 列表2 只能比较位置字符都相等的<br>
+列表.sort()可以比较位置不等的，但是sorted（列表）更好<br>
+其实set(列表1) == set(列表2)可以判断元素是否相等，不考虑顺序</p>
+<p>2.set(列表1).issubset(set(列表2))判断列表1是否在列表2中</p>
+<p>3.set(列表2).issuperset(set(列表1))判断列表2是否包含列表1</p>
+<p>4.set(列表1).intersection(set(列表2))取两个列表的交集</p>
+<p>5.set(列表1).symmetric_difference(set(列表2))取两个列表的不同成员</p>
+<p>6.差集：<br>
+set(列表1).difference(set(列表2))——列表1中有，列表2中没有的<br>
+set(列表2).difference(set(列表1))——列表2中有，列表1中没有的</p>
+<p>7.set(列表1).union(set(列表2))取并集</p>
+<h2 id="代码">代码</h2>
+<pre><code>from random import choice
+
+# 验证彩票中奖很难，the_list表示彩票的序列，my_ticket表示买的彩票的序列
+the_list = []
+my_ticket = []
+lists = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 'a', 'b', 'c', 'd', 'e'] # 彩票序列从这个list中挑选
+for i in range(0, 4):
+    the_list.append(choice(lists))  # 确定the_list，即中奖彩票序列
+
+count = 1
+while True:
+    print(f&quot;This is the {count} times to try...&quot;)  # 打印第几次成功
+    for i in range(0, 4):
+        my_ticket.append(choice(lists))
+    count += 1  # 每次my_ticket确定后count加一
+    if set(my_ticket) == set(the_list):
+        print(f&quot;Congratulate! You win the first award.\n The winning sequence is {the_list}.&quot;)
+        break
+</code></pre>
+<p>害，73523次还是没有出结果，看来很难了（也可能是我代码写错了？😤）</p>
+<h2 id="改错">改错</h2>
+<p>真的是我代码写错了，调试了一下，发现在while中的那个for循环写错了，每次if之后没有重置my_ticket，这样的话，第一次my_ticket是4个元素，第二次就是8个元素了，所以应该把my_ticket = []放在for循环前面！！😭太菜了，不过话说，debug这个功能真的好用，爱死发明这个功能的人了。</p>
+<h2 id="改过的代码">改过的代码</h2>
+<pre><code>from random import choice
+
+# 验证彩票中奖很难，the_list表示彩票的序列，my_ticket表示买的彩票的序列
+the_list = []
+
+lists = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 'a', 'b', 'c', 'd', 'e']
+for i in range(0, 4):
+    the_list.append(choice(lists))  # 确定the_list，即中奖彩票序列
+print(the_list)
+count = 1
+while True:
+    print(f&quot;This is the {count} times to try...&quot;)  # 打印第几次成功
+    my_ticket = []
+    for i in range(0, 4):
+        my_ticket.append(choice(lists))
+    # print(the_list)
+    # print(my_ticket)
+    count += 1  # 每次my_ticket确定后count加一
+    if set(my_ticket) == set(the_list):
+        print(f&quot;Congratulate! You win the first award.\n The winning sequence is {the_list}.&quot;)
+        break
+# print(set(['a', 1, 4, 3]) == set([1, 3, 4, 'a']))
+
+</code></pre>
+<h2 id="结果">结果</h2>
+<pre><code>E:\Anaconda\Anaconda\envs\tensorflow\python.exe E:/Pycharm/workplace/0208/lottery.py
+['d', 9, 6, 5]
+This is the 1 times to try...
+This is the 2 times to try...
+This is the 3 times to try...
+This is the 4 times to try...
+This is the 5 times to try...
+This is the 6 times to try...
+This is the 7 times to try...
+This is the 8 times to try...
+This is the 9 times to try...
+This is the 10 times to try...
+......
+This is the 1859 times to try...
+Congratulate! You win the first award.
+ The winning sequence is ['d', 9, 6, 5].
+
+Process finished with exit code 0
+</code></pre>
+<p>所以这个15个的序列的彩票都要1859次才能买中彩票。害，可想而知双色球这种彩票（红球33个选6个，蓝球16选1）要多少次哦。难怪叫公益彩票😂</p>
 ]]></content>
     </entry>
     <entry>

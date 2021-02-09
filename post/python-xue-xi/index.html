@@ -3,7 +3,7 @@
     <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Python学习 | Jokerの小站</title>
-<link rel="shortcut icon" href="https://joker6934.github.io//favicon.ico?v=1612532477019">
+<link rel="shortcut icon" href="https://joker6934.github.io//favicon.ico?v=1612886073459">
 <link href="https://cdn.jsdelivr.net/npm/remixicon@2.3.0/fonts/remixicon.css" rel="stylesheet">
 <link rel="stylesheet" href="https://joker6934.github.io//styles/main.css">
 <link rel="alternate" type="application/atom+xml" title="Python学习 | Jokerの小站 - Atom Feed" href="https://joker6934.github.io//atom.xml">
@@ -13,7 +13,9 @@
 
     <meta name="description" content="复试需要，python必须学一下，用的书是蟒蛇书，《Python编程 从入门到实践 第二版》还有《Python程序设计 第二版 董付国著》
 
-" />
+现在是2月6号了，我学到了蟒蛇书的9.3继承了，前几章还行，第八章有点难度了
+2.9
+今天遇到了列..." />
     <meta name="keywords" content="" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
     <script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
@@ -23,7 +25,7 @@
       <div class="main-content">
         <div class="site-header">
   <a href="https://joker6934.github.io/">
-  <img class="avatar" src="https://joker6934.github.io//images/avatar.png?v=1612532477019" alt="">
+  <img class="avatar" src="https://joker6934.github.io//images/avatar.png?v=1612886073459" alt="">
   </a>
   <h1 class="site-title">
     Jokerの小站
@@ -83,7 +85,7 @@
                 2021-02-05
               </span>
               <span>
-                1 min read
+                5 min read
               </span>
               
             </div>
@@ -94,10 +96,104 @@
               <div class="post-content">
                 <p>复试需要，python必须学一下，用的书是蟒蛇书，《Python编程 从入门到实践 第二版》还有《Python程序设计 第二版 董付国著》</p>
 <!-- more -->
+<p>现在是2月6号了，我学到了蟒蛇书的9.3继承了，前几章还行，第八章有点难度了</p>
+<h1 id="29">2.9</h1>
+<h2 id="今天遇到了列表的比较找到了以下有关的比较方法">今天遇到了列表的比较，找到了以下有关的比较方法：</h2>
+<p>1.列表1 == 列表2 只能比较位置字符都相等的<br>
+列表.sort()可以比较位置不等的，但是sorted（列表）更好<br>
+其实set(列表1) == set(列表2)可以判断元素是否相等，不考虑顺序</p>
+<p>2.set(列表1).issubset(set(列表2))判断列表1是否在列表2中</p>
+<p>3.set(列表2).issuperset(set(列表1))判断列表2是否包含列表1</p>
+<p>4.set(列表1).intersection(set(列表2))取两个列表的交集</p>
+<p>5.set(列表1).symmetric_difference(set(列表2))取两个列表的不同成员</p>
+<p>6.差集：<br>
+set(列表1).difference(set(列表2))——列表1中有，列表2中没有的<br>
+set(列表2).difference(set(列表1))——列表2中有，列表1中没有的</p>
+<p>7.set(列表1).union(set(列表2))取并集</p>
+<h2 id="代码">代码</h2>
+<pre><code>from random import choice
+
+# 验证彩票中奖很难，the_list表示彩票的序列，my_ticket表示买的彩票的序列
+the_list = []
+my_ticket = []
+lists = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 'a', 'b', 'c', 'd', 'e'] # 彩票序列从这个list中挑选
+for i in range(0, 4):
+    the_list.append(choice(lists))  # 确定the_list，即中奖彩票序列
+
+count = 1
+while True:
+    print(f&quot;This is the {count} times to try...&quot;)  # 打印第几次成功
+    for i in range(0, 4):
+        my_ticket.append(choice(lists))
+    count += 1  # 每次my_ticket确定后count加一
+    if set(my_ticket) == set(the_list):
+        print(f&quot;Congratulate! You win the first award.\n The winning sequence is {the_list}.&quot;)
+        break
+</code></pre>
+<p>害，73523次还是没有出结果，看来很难了（也可能是我代码写错了？😤）</p>
+<h2 id="改错">改错</h2>
+<p>真的是我代码写错了，调试了一下，发现在while中的那个for循环写错了，每次if之后没有重置my_ticket，这样的话，第一次my_ticket是4个元素，第二次就是8个元素了，所以应该把my_ticket = []放在for循环前面！！😭太菜了，不过话说，debug这个功能真的好用，爱死发明这个功能的人了。</p>
+<h2 id="改过的代码">改过的代码</h2>
+<pre><code>from random import choice
+
+# 验证彩票中奖很难，the_list表示彩票的序列，my_ticket表示买的彩票的序列
+the_list = []
+
+lists = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 'a', 'b', 'c', 'd', 'e']
+for i in range(0, 4):
+    the_list.append(choice(lists))  # 确定the_list，即中奖彩票序列
+print(the_list)
+count = 1
+while True:
+    print(f&quot;This is the {count} times to try...&quot;)  # 打印第几次成功
+    my_ticket = []
+    for i in range(0, 4):
+        my_ticket.append(choice(lists))
+    # print(the_list)
+    # print(my_ticket)
+    count += 1  # 每次my_ticket确定后count加一
+    if set(my_ticket) == set(the_list):
+        print(f&quot;Congratulate! You win the first award.\n The winning sequence is {the_list}.&quot;)
+        break
+# print(set(['a', 1, 4, 3]) == set([1, 3, 4, 'a']))
+
+</code></pre>
+<h2 id="结果">结果</h2>
+<pre><code>E:\Anaconda\Anaconda\envs\tensorflow\python.exe E:/Pycharm/workplace/0208/lottery.py
+['d', 9, 6, 5]
+This is the 1 times to try...
+This is the 2 times to try...
+This is the 3 times to try...
+This is the 4 times to try...
+This is the 5 times to try...
+This is the 6 times to try...
+This is the 7 times to try...
+This is the 8 times to try...
+This is the 9 times to try...
+This is the 10 times to try...
+......
+This is the 1859 times to try...
+Congratulate! You win the first award.
+ The winning sequence is ['d', 9, 6, 5].
+
+Process finished with exit code 0
+</code></pre>
+<p>所以这个15个的序列的彩票都要1859次才能买中彩票。害，可想而知双色球这种彩票（红球33个选6个，蓝球16选1）要多少次哦。难怪叫公益彩票😂</p>
 
               </div>
               <div class="toc-container">
-                
+                <ul class="markdownIt-TOC">
+<li><a href="#29">2.9</a>
+<ul>
+<li><a href="#%E4%BB%8A%E5%A4%A9%E9%81%87%E5%88%B0%E4%BA%86%E5%88%97%E8%A1%A8%E7%9A%84%E6%AF%94%E8%BE%83%E6%89%BE%E5%88%B0%E4%BA%86%E4%BB%A5%E4%B8%8B%E6%9C%89%E5%85%B3%E7%9A%84%E6%AF%94%E8%BE%83%E6%96%B9%E6%B3%95">今天遇到了列表的比较，找到了以下有关的比较方法：</a></li>
+<li><a href="#%E4%BB%A3%E7%A0%81">代码</a></li>
+<li><a href="#%E6%94%B9%E9%94%99">改错</a></li>
+<li><a href="#%E6%94%B9%E8%BF%87%E7%9A%84%E4%BB%A3%E7%A0%81">改过的代码</a></li>
+<li><a href="#%E7%BB%93%E6%9E%9C">结果</a></li>
+</ul>
+</li>
+</ul>
+
               </div>
             </div>
           </article>
