@@ -3,7 +3,7 @@
     <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Python学习 | Jokerの小站</title>
-<link rel="shortcut icon" href="https://joker6934.github.io//favicon.ico?v=1612886073459">
+<link rel="shortcut icon" href="https://joker6934.github.io//favicon.ico?v=1613610396233">
 <link href="https://cdn.jsdelivr.net/npm/remixicon@2.3.0/fonts/remixicon.css" rel="stylesheet">
 <link rel="stylesheet" href="https://joker6934.github.io//styles/main.css">
 <link rel="alternate" type="application/atom+xml" title="Python学习 | Jokerの小站 - Atom Feed" href="https://joker6934.github.io//atom.xml">
@@ -15,7 +15,8 @@
 
 现在是2月6号了，我学到了蟒蛇书的9.3继承了，前几章还行，第八章有点难度了
 2.9
-今天遇到了列..." />
+
+今天遇到了..." />
     <meta name="keywords" content="" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
     <script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
@@ -25,7 +26,7 @@
       <div class="main-content">
         <div class="site-header">
   <a href="https://joker6934.github.io/">
-  <img class="avatar" src="https://joker6934.github.io//images/avatar.png?v=1612886073459" alt="">
+  <img class="avatar" src="https://joker6934.github.io//images/avatar.png?v=1613610396233" alt="">
   </a>
   <h1 class="site-title">
     Jokerの小站
@@ -85,7 +86,7 @@
                 2021-02-05
               </span>
               <span>
-                5 min read
+                9 min read
               </span>
               
             </div>
@@ -98,6 +99,7 @@
 <!-- more -->
 <p>现在是2月6号了，我学到了蟒蛇书的9.3继承了，前几章还行，第八章有点难度了</p>
 <h1 id="29">2.9</h1>
+<hr>
 <h2 id="今天遇到了列表的比较找到了以下有关的比较方法">今天遇到了列表的比较，找到了以下有关的比较方法：</h2>
 <p>1.列表1 == 列表2 只能比较位置字符都相等的<br>
 列表.sort()可以比较位置不等的，但是sorted（列表）更好<br>
@@ -179,6 +181,57 @@ Congratulate! You win the first award.
 Process finished with exit code 0
 </code></pre>
 <p>所以这个15个的序列的彩票都要1859次才能买中彩票。害，可想而知双色球这种彩票（红球33个选6个，蓝球16选1）要多少次哦。难怪叫公益彩票😂</p>
+<h1 id="210">2.10</h1>
+<hr>
+<h2 id="今天遇到了关于字符串的一些问题">今天遇到了关于字符串的一些问题</h2>
+<h3 id="1字符串的rstrip和strip方法">1.字符串的rstrip()和strip()方法</h3>
+<p>直接菜鸟编程链接：<a href="https://www.runoob.com/python/att-string-rstrip.html">rstrip()方法</a>和<a href="https://www.runoob.com/python/att-string-strip.html">strip()方法</a></p>
+<pre><code>strip() 方法用于移除字符串头尾指定的字符（默认为空格或换行符）或字符序列。
+注意：该方法只能删除开头或是结尾的字符，不能删除中间部分的字符。
+rstrip() 删除 string 字符串末尾的指定字符（默认为空格)
+</code></pre>
+<h4 id="1rstrip">(1).rstrip()</h4>
+<p>str.rstrip([chars]),chars 为指定删除的字符（默认为空格）,返回删除 string 字符串末尾的指定字符后生成的新字符串。</p>
+<h4 id="2strip">(2).strip()</h4>
+<p>str.strip([chars]),chars -- 移除字符串头尾指定的字符序列,返回移除字符串头尾指定的字符生成的新字符串。</p>
+<h3 id="2readline和readlines">2.readline()和readlines()</h3>
+<p>服了，就差了一个s，我就说怎么一直只能读取文件的一行，书上还说读全部行🤧</p>
+<h1 id="211-213">2.11-2.13</h1>
+<p>三天春节休息🚌🍴🤓<br>
+出行，吃饭，看电影</p>
+<h1 id="214">2.14</h1>
+<h2 id="今天遇到了关于open函数的一些问题">今天遇到了关于open函数的一些问题</h2>
+<p>在书上对于open函数的报错条件提示的不是很清楚，有时候一个例子会报错，有时候会自动新建一个文件，这让我在对异常的处理时很糊涂。</p>
+<p>open()函数完整的语法格式为：</p>
+<pre><code>open(file, mode=‘r’, buffering=None, encoding=None, errors=None, newline=None, closefd=True)
+</code></pre>
+<p>函数定义的参数挺多，这里我们着重讲解mode——文件打开模式。mode参数有两大类，分别用来指定打开文件的文件格式和读写模式。</p>
+<p>文件格式相关参数</p>
+<p>t：以文本格式打开文件(<strong>默认</strong>)。一般用于文本文件，如：txt。<br>
+b：以二进制格式打开文件。一般用于非文本文件，如：图片。<br>
+这一类参数可以与其它的模式参数组合使用，用于指定打开文件的格式，需要根据你要打开文件的类型进行选择。</p>
+<p>读写模式相关参数</p>
+<p>r：以只读方式打开文件(<strong>默认模式</strong>)。文件指针定位在文件头的位置。如果<code>文件不存在会报错。</code><br>
+w：以只写方式打开文件。如果文件存在，则打开文件，清空文件内容，从文件头开始编辑；如果<code>文件不存在，则创建新文件，打开编辑。</code><br>
+a：以追加方式打开文件，同样是只写，不允许进行读操作。如果文件存在，则打开文件，将文件指针定位到文件尾。因此，新的内容是追加在已有内容之后。如果<code>文件不存在，则创建新文件</code>进行写入。<br>
++：打开一个文件进行更新(可读写)。<br>
+<em>注意：该模式不能单独使用，需要与r/w/a组合使用。打开文件后文件指针的位置取决于另一个组合参数。</em></p>
+<p>组合模式</p>
+<p>r+：打开一个文件用于读写。如果文件存在，则打开文件，将文件指针定位在文件头，新写入的内容在原有内容的前面；如果<code>文件不存在会报错。</code><br>
+w+：打开一个文件用于读写。如果文件存在，则打开文件，清空原有内容，进入编辑模式；如果文件不存在，则<code>创建一个新文件</code>进行读写操作。<br>
+a+：以追加模式打开一个文件用于读写。如果文件存在，则打开文件，将文件指针定位在文件尾，新写入的内容在原有内容的后面；如果<code>文件不存在，则创建一个新文件</code>用于读写。</p>
+<h3 id="所以只有在读或者读写时文件不存在会报错其他都会直接创建一个新的文件">所以只有在<strong>读或者读写</strong>时，文件不存在<strong>会报错</strong>，其他都会直接创建一个新的文件</h3>
+<h1 id="215">2.15</h1>
+<p>今天写的格外顺畅，没有出现什么问题，可能是我写的有点少，才写了两个课后练习。<br>
+感觉第9章的类有点忘记了，特别时那些__init__什么的，还有什么实列属性什么的😱<br>
+等我把第11章看完，第一部分结束后在来一边复习吧，太慢了啊喂</p>
+<h1 id="216">2.16</h1>
+<h2 id="今天开始第11章顺便复习了一下第9章">今天开始第11章，顺便复习了一下第9章</h2>
+<p>Ok，结束了第11章，现在开始第二部分，开始做一个书上的游戏项目😁</p>
+<h1 id="217">2.17</h1>
+<h2 id="今天遇到了关于pygame的屏幕和背景的一些小问题">今天遇到了关于pygame的屏幕和背景的一些小问题</h2>
+<p>动态屏幕大小的背景，更改书上的代码使更简洁<br>
+在飞船移动的时候出现了问题，在设计了可变飞船移速的时候不能动了，然后就觉得是传递float变量值的时候出错了，果然，把它注释掉就可以动了，但是发现左右移动速度不一样（这样的问题海星），然后仔细比对发现是我看错了，把self.x写成了self.rect.x了。服了。</p>
 
               </div>
               <div class="toc-container">
@@ -190,6 +243,42 @@ Process finished with exit code 0
 <li><a href="#%E6%94%B9%E9%94%99">改错</a></li>
 <li><a href="#%E6%94%B9%E8%BF%87%E7%9A%84%E4%BB%A3%E7%A0%81">改过的代码</a></li>
 <li><a href="#%E7%BB%93%E6%9E%9C">结果</a></li>
+</ul>
+</li>
+<li><a href="#210">2.10</a>
+<ul>
+<li><a href="#%E4%BB%8A%E5%A4%A9%E9%81%87%E5%88%B0%E4%BA%86%E5%85%B3%E4%BA%8E%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E4%B8%80%E4%BA%9B%E9%97%AE%E9%A2%98">今天遇到了关于字符串的一些问题</a>
+<ul>
+<li><a href="#1%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84rstrip%E5%92%8Cstrip%E6%96%B9%E6%B3%95">1.字符串的rstrip()和strip()方法</a>
+<ul>
+<li><a href="#1rstrip">(1).rstrip()</a></li>
+<li><a href="#2strip">(2).strip()</a></li>
+</ul>
+</li>
+<li><a href="#2readline%E5%92%8Creadlines">2.readline()和readlines()</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#211-213">2.11-2.13</a></li>
+<li><a href="#214">2.14</a>
+<ul>
+<li><a href="#%E4%BB%8A%E5%A4%A9%E9%81%87%E5%88%B0%E4%BA%86%E5%85%B3%E4%BA%8Eopen%E5%87%BD%E6%95%B0%E7%9A%84%E4%B8%80%E4%BA%9B%E9%97%AE%E9%A2%98">今天遇到了关于open函数的一些问题</a>
+<ul>
+<li><a href="#%E6%89%80%E4%BB%A5%E5%8F%AA%E6%9C%89%E5%9C%A8%E8%AF%BB%E6%88%96%E8%80%85%E8%AF%BB%E5%86%99%E6%97%B6%E6%96%87%E4%BB%B6%E4%B8%8D%E5%AD%98%E5%9C%A8%E4%BC%9A%E6%8A%A5%E9%94%99%E5%85%B6%E4%BB%96%E9%83%BD%E4%BC%9A%E7%9B%B4%E6%8E%A5%E5%88%9B%E5%BB%BA%E4%B8%80%E4%B8%AA%E6%96%B0%E7%9A%84%E6%96%87%E4%BB%B6">所以只有在<strong>读或者读写</strong>时，文件不存在<strong>会报错</strong>，其他都会直接创建一个新的文件</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#215">2.15</a></li>
+<li><a href="#216">2.16</a>
+<ul>
+<li><a href="#%E4%BB%8A%E5%A4%A9%E5%BC%80%E5%A7%8B%E7%AC%AC11%E7%AB%A0%E9%A1%BA%E4%BE%BF%E5%A4%8D%E4%B9%A0%E4%BA%86%E4%B8%80%E4%B8%8B%E7%AC%AC9%E7%AB%A0">今天开始第11章，顺便复习了一下第9章</a></li>
+</ul>
+</li>
+<li><a href="#217">2.17</a>
+<ul>
+<li><a href="#%E4%BB%8A%E5%A4%A9%E9%81%87%E5%88%B0%E4%BA%86%E5%85%B3%E4%BA%8Epygame%E7%9A%84%E5%B1%8F%E5%B9%95%E5%92%8C%E8%83%8C%E6%99%AF%E7%9A%84%E4%B8%80%E4%BA%9B%E5%B0%8F%E9%97%AE%E9%A2%98">今天遇到了关于pygame的屏幕和背景的一些小问题</a></li>
 </ul>
 </li>
 </ul>

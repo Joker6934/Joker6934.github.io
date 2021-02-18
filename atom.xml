@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://joker6934.github.io/</id>
     <title>Jokerの小站</title>
-    <updated>2021-02-09T15:54:37.253Z</updated>
+    <updated>2021-02-18T01:55:37.260Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://joker6934.github.io/"/>
     <link rel="self" href="https://joker6934.github.io/atom.xml"/>
@@ -10,6 +10,18 @@
     <logo>https://joker6934.github.io/images/avatar.png</logo>
     <icon>https://joker6934.github.io/favicon.ico</icon>
     <rights>All rights reserved 2021, Jokerの小站</rights>
+    <entry>
+        <title type="html"><![CDATA[Anaconda安装和Tensorflow的配置]]></title>
+        <id>https://joker6934.github.io/post/anaconda-an-zhuang-he-tensorflow-de-pei-zhi/</id>
+        <link href="https://joker6934.github.io/post/anaconda-an-zhuang-he-tensorflow-de-pei-zhi/">
+        </link>
+        <updated>2021-02-14T08:29:18.000Z</updated>
+        <summary type="html"><![CDATA[<p>写这个的时候其实我已经安装好了好久，但是还是想在写写，因为太难了当时</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>写这个的时候其实我已经安装好了好久，但是还是想在写写，因为太难了当时</p>
+<!-- more -->
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Python学习]]></title>
         <id>https://joker6934.github.io/post/python-xue-xi/</id>
@@ -22,6 +34,7 @@
 <!-- more -->
 <p>现在是2月6号了，我学到了蟒蛇书的9.3继承了，前几章还行，第八章有点难度了</p>
 <h1 id="29">2.9</h1>
+<hr>
 <h2 id="今天遇到了列表的比较找到了以下有关的比较方法">今天遇到了列表的比较，找到了以下有关的比较方法：</h2>
 <p>1.列表1 == 列表2 只能比较位置字符都相等的<br>
 列表.sort()可以比较位置不等的，但是sorted（列表）更好<br>
@@ -103,6 +116,57 @@ Congratulate! You win the first award.
 Process finished with exit code 0
 </code></pre>
 <p>所以这个15个的序列的彩票都要1859次才能买中彩票。害，可想而知双色球这种彩票（红球33个选6个，蓝球16选1）要多少次哦。难怪叫公益彩票😂</p>
+<h1 id="210">2.10</h1>
+<hr>
+<h2 id="今天遇到了关于字符串的一些问题">今天遇到了关于字符串的一些问题</h2>
+<h3 id="1字符串的rstrip和strip方法">1.字符串的rstrip()和strip()方法</h3>
+<p>直接菜鸟编程链接：<a href="https://www.runoob.com/python/att-string-rstrip.html">rstrip()方法</a>和<a href="https://www.runoob.com/python/att-string-strip.html">strip()方法</a></p>
+<pre><code>strip() 方法用于移除字符串头尾指定的字符（默认为空格或换行符）或字符序列。
+注意：该方法只能删除开头或是结尾的字符，不能删除中间部分的字符。
+rstrip() 删除 string 字符串末尾的指定字符（默认为空格)
+</code></pre>
+<h4 id="1rstrip">(1).rstrip()</h4>
+<p>str.rstrip([chars]),chars 为指定删除的字符（默认为空格）,返回删除 string 字符串末尾的指定字符后生成的新字符串。</p>
+<h4 id="2strip">(2).strip()</h4>
+<p>str.strip([chars]),chars -- 移除字符串头尾指定的字符序列,返回移除字符串头尾指定的字符生成的新字符串。</p>
+<h3 id="2readline和readlines">2.readline()和readlines()</h3>
+<p>服了，就差了一个s，我就说怎么一直只能读取文件的一行，书上还说读全部行🤧</p>
+<h1 id="211-213">2.11-2.13</h1>
+<p>三天春节休息🚌🍴🤓<br>
+出行，吃饭，看电影</p>
+<h1 id="214">2.14</h1>
+<h2 id="今天遇到了关于open函数的一些问题">今天遇到了关于open函数的一些问题</h2>
+<p>在书上对于open函数的报错条件提示的不是很清楚，有时候一个例子会报错，有时候会自动新建一个文件，这让我在对异常的处理时很糊涂。</p>
+<p>open()函数完整的语法格式为：</p>
+<pre><code>open(file, mode=‘r’, buffering=None, encoding=None, errors=None, newline=None, closefd=True)
+</code></pre>
+<p>函数定义的参数挺多，这里我们着重讲解mode——文件打开模式。mode参数有两大类，分别用来指定打开文件的文件格式和读写模式。</p>
+<p>文件格式相关参数</p>
+<p>t：以文本格式打开文件(<strong>默认</strong>)。一般用于文本文件，如：txt。<br>
+b：以二进制格式打开文件。一般用于非文本文件，如：图片。<br>
+这一类参数可以与其它的模式参数组合使用，用于指定打开文件的格式，需要根据你要打开文件的类型进行选择。</p>
+<p>读写模式相关参数</p>
+<p>r：以只读方式打开文件(<strong>默认模式</strong>)。文件指针定位在文件头的位置。如果<code>文件不存在会报错。</code><br>
+w：以只写方式打开文件。如果文件存在，则打开文件，清空文件内容，从文件头开始编辑；如果<code>文件不存在，则创建新文件，打开编辑。</code><br>
+a：以追加方式打开文件，同样是只写，不允许进行读操作。如果文件存在，则打开文件，将文件指针定位到文件尾。因此，新的内容是追加在已有内容之后。如果<code>文件不存在，则创建新文件</code>进行写入。<br>
++：打开一个文件进行更新(可读写)。<br>
+<em>注意：该模式不能单独使用，需要与r/w/a组合使用。打开文件后文件指针的位置取决于另一个组合参数。</em></p>
+<p>组合模式</p>
+<p>r+：打开一个文件用于读写。如果文件存在，则打开文件，将文件指针定位在文件头，新写入的内容在原有内容的前面；如果<code>文件不存在会报错。</code><br>
+w+：打开一个文件用于读写。如果文件存在，则打开文件，清空原有内容，进入编辑模式；如果文件不存在，则<code>创建一个新文件</code>进行读写操作。<br>
+a+：以追加模式打开一个文件用于读写。如果文件存在，则打开文件，将文件指针定位在文件尾，新写入的内容在原有内容的后面；如果<code>文件不存在，则创建一个新文件</code>用于读写。</p>
+<h3 id="所以只有在读或者读写时文件不存在会报错其他都会直接创建一个新的文件">所以只有在<strong>读或者读写</strong>时，文件不存在<strong>会报错</strong>，其他都会直接创建一个新的文件</h3>
+<h1 id="215">2.15</h1>
+<p>今天写的格外顺畅，没有出现什么问题，可能是我写的有点少，才写了两个课后练习。<br>
+感觉第9章的类有点忘记了，特别时那些__init__什么的，还有什么实列属性什么的😱<br>
+等我把第11章看完，第一部分结束后在来一边复习吧，太慢了啊喂</p>
+<h1 id="216">2.16</h1>
+<h2 id="今天开始第11章顺便复习了一下第9章">今天开始第11章，顺便复习了一下第9章</h2>
+<p>Ok，结束了第11章，现在开始第二部分，开始做一个书上的游戏项目😁</p>
+<h1 id="217">2.17</h1>
+<h2 id="今天遇到了关于pygame的屏幕和背景的一些小问题">今天遇到了关于pygame的屏幕和背景的一些小问题</h2>
+<p>动态屏幕大小的背景，更改书上的代码使更简洁<br>
+在飞船移动的时候出现了问题，在设计了可变飞船移速的时候不能动了，然后就觉得是传递float变量值的时候出错了，果然，把它注释掉就可以动了，但是发现左右移动速度不一样（这样的问题海星），然后仔细比对发现是我看错了，把self.x写成了self.rect.x了。服了。</p>
 ]]></content>
     </entry>
     <entry>
