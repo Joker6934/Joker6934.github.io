@@ -3,7 +3,7 @@
     <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Python学习 | Jokerの小站</title>
-<link rel="shortcut icon" href="https://joker6934.github.io//favicon.ico?v=1613822797937">
+<link rel="shortcut icon" href="https://joker6934.github.io//favicon.ico?v=1615107045578">
 <link href="https://cdn.jsdelivr.net/npm/remixicon@2.3.0/fonts/remixicon.css" rel="stylesheet">
 <link rel="stylesheet" href="https://joker6934.github.io//styles/main.css">
 <link rel="alternate" type="application/atom+xml" title="Python学习 | Jokerの小站 - Atom Feed" href="https://joker6934.github.io//atom.xml">
@@ -26,7 +26,7 @@
       <div class="main-content">
         <div class="site-header">
   <a href="https://joker6934.github.io/">
-  <img class="avatar" src="https://joker6934.github.io//images/avatar.png?v=1613822797937" alt="">
+  <img class="avatar" src="https://joker6934.github.io//images/avatar.png?v=1615107045578" alt="">
   </a>
   <h1 class="site-title">
     Jokerの小站
@@ -86,7 +86,7 @@
                 2021-02-05
               </span>
               <span>
-                9 min read
+                12 min read
               </span>
               
             </div>
@@ -237,6 +237,81 @@ a+：以追加模式打开一个文件用于读写。如果文件存在，则打
 <p>开始Python程序设计的复习了，现在离出成绩还有一个星期左右，离复试还有一个月左右，加油加油加油！！！</p>
 <h1 id="220">2.20</h1>
 <p>今天先把论文开题报告写了一半，明天写好先给老师看一下吧，离结束日期还有8天，还来得及。具体实现要抓紧了，因为复试面试也差不多要中期检查了</p>
+<h1 id="32">3.2</h1>
+<p>现在在学校里了，昨天就写了05年的真题，但是太菜了，2个小时才写了一道题，而且感觉不是很优秀的解决方案，今天看了一下还是没有什么能改进的。<br>
+前几天把论文写好了，然后这些天感觉就没有好好学习了，现在到复试还剩下不到一个月了，一定要好好弄，进了复试（74名就很迷，太菜了）就不能留遗憾。<br>
+现在就按照计划一步步来吧，认真对待才能有所成绩！！！</p>
+<h2 id="一-read-readline和readlines的区别">一. read() readline()和readlines()的区别</h2>
+<h3 id="1read">1.read()</h3>
+<p>特点是：读取整个文件，将文件内容放到一个<strong>字符串变量</strong>中。<br>
+劣势是：如果文件非常大，尤其是大于内存时，无法使用read()方法。<br>
+read()直接读取字节到字符串中，包括了换行符</p>
+<h3 id="2readline">2.readline()</h3>
+<p>特点：readline()方法每次读取<strong>一行</strong>；返回的是一个字符串对象，保持当前行的内存<br>
+缺点：比readlines慢得多<br>
+readline()  读取整行，包括行结束符，并作为字符串返回</p>
+<h3 id="3readlines">3.readlines()</h3>
+<p>特点：一次性读取整个文件；自动将文件内容分析成一个行的列表。<br>
+readlines()读取所有行然后把它们作为一个字符串<strong>列表</strong>返回。</p>
+<h3 id="split只能对字符串进行拆分">split()只能对字符串进行拆分</h3>
+<h2 id="二-进制转换">二. 进制转换</h2>
+<p>使用Python内置函数：bin()、oct()、int()、hex()可实现进制转换。</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">⬇️</th>
+<th style="text-align:center">2进制</th>
+<th style="text-align:center">8进制</th>
+<th style="text-align:center">10进制</th>
+<th style="text-align:center">16进制</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">2进制</td>
+<td style="text-align:center"></td>
+<td style="text-align:center">bin(int(x, 8))</td>
+<td style="text-align:center">bin(int(x, 10))</td>
+<td style="text-align:center">bin(int(x, 16))</td>
+</tr>
+<tr>
+<td style="text-align:center">8进制</td>
+<td style="text-align:center">oct(int(x, 2))</td>
+<td style="text-align:center"></td>
+<td style="text-align:center">oct(int(x, 10))</td>
+<td style="text-align:center">oct(int(x, 16))</td>
+</tr>
+<tr>
+<td style="text-align:center">10进制</td>
+<td style="text-align:center">int(x, 2)</td>
+<td style="text-align:center">int(x, 8)</td>
+<td style="text-align:center"></td>
+<td style="text-align:center">int(x, 16)</td>
+</tr>
+<tr>
+<td style="text-align:center">16进制</td>
+<td style="text-align:center">hex(int(x, 2))</td>
+<td style="text-align:center">hex(int(x, 8))</td>
+<td style="text-align:center">hex(int(x, 10))</td>
+<td style="text-align:center"></td>
+</tr>
+</tbody>
+</table>
+<h2 id="三replace函数">三.replace()函数</h2>
+<p><code>s1.replace(s2, s3) # 将s1中的s2用s3替换掉</code><br>
+还有两种方式可以替换字符串的内容<br>
+<img src="https://joker6934.github.io//post-images/1614689169256.png" alt="" loading="lazy"></p>
+<h1 id="33">3.3</h1>
+<h2 id="字符串转换为二进制">字符串转换为二进制</h2>
+<p><img src="https://joker6934.github.io//post-images/1614859284290.png" alt="" loading="lazy"><br>
+或者<br>
+<img src="https://joker6934.github.io//post-images/1614859460814.png" alt="" loading="lazy"></p>
+<h1 id="37">3.7</h1>
+<p>好几天没有好好学习了，今天开始到复试都不能在瞎搞了！！！！<br>
+今天遇到了异或的问题</p>
+<h2 id="1整数类型能不能异或">1.整数类型能不能异或</h2>
+<p>---&gt;可以直接异或，他会自动先转换为二进制，运算完成后，会自动转换为整数类型&lt;---<br>
+<img src="https://joker6934.github.io//post-images/1615106737727.png" alt="" loading="lazy"></p>
 
               </div>
               <div class="toc-container">
@@ -292,6 +367,30 @@ a+：以追加模式打开一个文件用于读写。如果文件存在，则打
 </ul>
 </li>
 <li><a href="#220">2.20</a></li>
+<li><a href="#32">3.2</a>
+<ul>
+<li><a href="#%E4%B8%80-read-readline%E5%92%8Creadlines%E7%9A%84%E5%8C%BA%E5%88%AB">一. read() readline()和readlines()的区别</a>
+<ul>
+<li><a href="#1read">1.read()</a></li>
+<li><a href="#2readline">2.readline()</a></li>
+<li><a href="#3readlines">3.readlines()</a></li>
+<li><a href="#split%E5%8F%AA%E8%83%BD%E5%AF%B9%E5%AD%97%E7%AC%A6%E4%B8%B2%E8%BF%9B%E8%A1%8C%E6%8B%86%E5%88%86">split()只能对字符串进行拆分</a></li>
+</ul>
+</li>
+<li><a href="#%E4%BA%8C-%E8%BF%9B%E5%88%B6%E8%BD%AC%E6%8D%A2">二. 进制转换</a></li>
+<li><a href="#%E4%B8%89replace%E5%87%BD%E6%95%B0">三.replace()函数</a></li>
+</ul>
+</li>
+<li><a href="#33">3.3</a>
+<ul>
+<li><a href="#%E5%AD%97%E7%AC%A6%E4%B8%B2%E8%BD%AC%E6%8D%A2%E4%B8%BA%E4%BA%8C%E8%BF%9B%E5%88%B6">字符串转换为二进制</a></li>
+</ul>
+</li>
+<li><a href="#37">3.7</a>
+<ul>
+<li><a href="#1%E6%95%B4%E6%95%B0%E7%B1%BB%E5%9E%8B%E8%83%BD%E4%B8%8D%E8%83%BD%E5%BC%82%E6%88%96">1.整数类型能不能异或</a></li>
+</ul>
+</li>
 </ul>
 
               </div>
