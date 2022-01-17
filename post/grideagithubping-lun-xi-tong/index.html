@@ -1,96 +1,95 @@
+
+<!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
+    
+<meta charset="utf-8" >
+
 <title>Gridea+Github+Gitalk评论系统 | Jokerの小站</title>
-<link rel="shortcut icon" href="https://Joker6934.github.io//favicon.ico?v=1642431306340">
-<link href="https://cdn.jsdelivr.net/npm/remixicon@2.3.0/fonts/remixicon.css" rel="stylesheet">
+<meta name="description" content="闲逛的世俗之人">
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="shortcut icon" href="https://Joker6934.github.io//favicon.ico?v=1642431692243">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
 <link rel="stylesheet" href="https://Joker6934.github.io//styles/main.css">
-<link rel="alternate" type="application/atom+xml" title="Gridea+Github+Gitalk评论系统 | Jokerの小站 - Atom Feed" href="https://Joker6934.github.io//atom.xml">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
+
+
+  
+    <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css" />
+  
+
+  
+
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
 
 
 
-    <meta name="description" content="最近想开始写博客了，上网查发现还是Gridea这种简单耐看的符合我的胃口，哈哈哈😃
-废话不多说，开始聊聊我在部署安装时候踩的坑和解决措施吧😭
-
-1.Gridea的安装
-下载地址：Github或者Gridea官网
-（1）Github方式
-..." />
-    <meta name="keywords" content="" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
-    <script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
   </head>
   <body>
-    <div class="main">
-      <div class="main-content">
-        <div class="site-header">
-  <a href="https://Joker6934.github.io/">
-  <img class="avatar" src="https://Joker6934.github.io//images/avatar.png?v=1642431306340" alt="">
-  </a>
-  <h1 class="site-title">
-    Jokerの小站
-  </h1>
-  <p class="site-description">
-    闲逛的世俗之人
-  </p>
-  <div class="menu-container">
-    
-      
-        <a href="https://Joker6934.github.io/" class="menu">
-          首页
-        </a>
-      
-    
-      
-        <a href="https://Joker6934.github.io/archives" class="menu">
-          归档
-        </a>
-      
-    
-      
-        <a href="https://Joker6934.github.io/tags" class="menu">
-          标签
-        </a>
-      
-    
-  </div>
-  <div class="social-container">
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
+    <div id="app" class="main">
+      <div class="site-header-container">
+  <div class="site-header">
+    <div class="left">
+      <a href="https://Joker6934.github.io/">
+        <img class="avatar" src="https://Joker6934.github.io//images/avatar.png?v=1642431692243" alt="" width="32px" height="32px">
+      </a>
+      <a href="https://Joker6934.github.io/">
+        <h1 class="site-title">Jokerの小站</h1>
+      </a>
+    </div>
+    <div class="right">
+      <transition name="fade">
+        <i class="icon" :class="{ 'icon-close-outline': menuVisible, 'icon-menu-outline': !menuVisible }" @click="menuVisible = !menuVisible"></i>
+      </transition>
+    </div>
   </div>
 </div>
 
+<transition name="fade">
+  <div class="menu-container" style="display: none;" v-show="menuVisible">
+    <div class="menu-list">
+      
+        
+          <a href="https://Joker6934.github.io/" class="menu purple-link">
+            首页
+          </a>
+        
+      
+        
+          <a href="https://Joker6934.github.io/archives" class="menu purple-link">
+            归档
+          </a>
+        
+      
+        
+          <a href="https://Joker6934.github.io/tags" class="menu purple-link">
+            标签
+          </a>
+        
+      
+    </div>
+  </div>
+</transition>
+
+
+      <div class="content-container">
         <div class="post-detail">
-          <article class="post">
-            <h2 class="post-title">
-              Gridea+Github+Gitalk评论系统
-            </h2>
-            <div class="post-info">
-              <span>
-                2021-02-05
-              </span>
-              <span>
-                3 min read
-              </span>
-              
+          
+            <div class="feature-container" style="background-image: url('https://Joker6934.github.io//post-images/grideagithubping-lun-xi-tong.jpg')">
             </div>
+          
+          <h2 class="post-title">Gridea+Github+Gitalk评论系统</h2>
+          <div class="post-info post-detail-info">
+            <span><i class="icon-calendar-outline"></i> 2021-02-05</span>
             
-              <img class="post-feature-image" src="https://Joker6934.github.io//post-images/grideagithubping-lun-xi-tong.jpg" alt="">
-            
-            <div class="post-content-wrapper">
-              <div class="post-content">
-                <p>最近想开始写博客了，上网查发现还是Gridea这种简单耐看的符合我的胃口，哈哈哈😃<br>
+          </div>
+          <div class="post-content">
+            <p>最近想开始写博客了，上网查发现还是Gridea这种简单耐看的符合我的胃口，哈哈哈😃<br>
 废话不多说，开始聊聊我在部署安装时候踩的坑和解决措施吧😭</p>
 <!-- more -->
 <h1 id="1gridea的安装">1.Gridea的安装</h1>
@@ -163,122 +162,86 @@
 <img src="https://Joker6934.github.io//post-images/1612530435665.jpg" alt="" loading="lazy"></p>
 <h2 id="这就是全部了开始写你的第一篇博客吧">这就是全部了，开始写你的第一篇博客吧！！😉</h2>
 
-              </div>
-              <div class="toc-container">
-                <ul class="markdownIt-TOC">
-<li><a href="#1gridea%E7%9A%84%E5%AE%89%E8%A3%85">1.Gridea的安装</a>
-<ul>
-<li><a href="#1github%E6%96%B9%E5%BC%8F">（1）Github方式</a></li>
-<li><a href="#2%E5%AE%98%E7%BD%91%E6%96%B9%E5%BC%8F">（2）官网方式</a></li>
-</ul>
-</li>
-<li><a href="#2%E9%85%8D%E7%BD%AEgithub">2.配置GitHub</a></li>
-<li><a href="#3%E9%85%8D%E7%BD%AEgridea">3.配置Gridea</a>
-<ul>
-<li><a href="#1%E5%88%9B%E5%BB%BAtoken">(1)创建Token</a></li>
-<li><a href="#2%E8%AE%BF%E9%97%AE%E8%87%AA%E5%B7%B1%E7%9A%84%E7%BD%91%E9%A1%B5">(2)访问自己的网页</a></li>
-</ul>
-</li>
-<li><a href="#4%E8%AE%BE%E7%BD%AE%E5%9F%BA%E4%BA%8Egitalk%E7%9A%84%E8%AF%84%E8%AE%BA%E7%B3%BB%E7%BB%9F">4.设置基于Gitalk的评论系统</a>
-<ul>
-<li><a href="#%E8%BF%99%E5%B0%B1%E6%98%AF%E5%85%A8%E9%83%A8%E4%BA%86%E5%BC%80%E5%A7%8B%E5%86%99%E4%BD%A0%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2%E5%90%A7">这就是全部了，开始写你的第一篇博客吧！！😉</a></li>
-</ul>
-</li>
-</ul>
-
-              </div>
-            </div>
-          </article>
+          </div>
         </div>
 
         
           <div class="next-post">
-            <div class="next">下一篇</div>
-            <a href="https://Joker6934.github.io/post/man-man-tensorflow-qiu-xue-zhi-lu/">
+            <a class="purple-link" href="https://Joker6934.github.io/post/man-man-tensorflow-qiu-xue-zhi-lu/">
               <h3 class="post-title">
-                漫漫Tensorflow求学之路
+                下一篇：漫漫Tensorflow求学之路
               </h3>
             </a>
           </div>
-        
-
-        
           
-            <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
-<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+      </div>
 
-<div id="gitalk-container"></div>
+      
+        
+          <div id="gitalk-container"></div>
+        
 
-<script>
+        
+      
 
-  var gitalk = new Gitalk({
-    clientID: 'c48820c82bc8d74e8ab1',
-    clientSecret: '428543d4dd2d5b806831e143774de020cd20a498',
-    repo: 'Joker6934.github.io',
-    owner: 'Joker6934',
-    admin: ['Joker6934'],
-    id: (location.pathname).substring(0, 49),      // Ensure uniqueness and length less than 50
-    distractionFreeMode: false  // Facebook-like distraction free mode
-  })
+      <div class="site-footer">
+  <div class="slogan">闲逛的世俗之人</div>
+  <div class="social-container">
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+  </div>
+  Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | <a class="rss" href="https://Joker6934.github.io//atom.xml" target="_blank">RSS</a>
+</div>
 
-  gitalk.render('gitalk-container')
+
+    </div>
+    <script type="application/javascript">
+
+hljs.initHighlightingOnLoad()
+
+var app = new Vue({
+  el: '#app',
+  data: {
+    menuVisible: false,
+  },
+})
 
 </script>
 
-          
 
-          
-        
 
-        <div class="site-footer">
-  Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a>
-  <a class="rss" href="https://Joker6934.github.io//atom.xml" target="_blank">
-    <i class="ri-rss-line"></i> RSS
-  </a>
-</div>
-
-      </div>
-    </div>
-
+  
+    <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
     <script>
-      hljs.initHighlightingOnLoad()
 
-      let mainNavLinks = document.querySelectorAll(".markdownIt-TOC a");
+      var gitalk = new Gitalk({
+        clientID: 'c48820c82bc8d74e8ab1',
+        clientSecret: '428543d4dd2d5b806831e143774de020cd20a498',
+        repo: 'Joker6934.github.io',
+        owner: 'Joker6934',
+        admin: ['Joker6934'],
+        id: (location.pathname).substring(0, 49),      // Ensure uniqueness and length less than 50
+        distractionFreeMode: false  // Facebook-like distraction free mode
+      })
 
-      // This should probably be throttled.
-      // Especially because it triggers during smooth scrolling.
-      // https://lodash.com/docs/4.17.10#throttle
-      // You could do like...
-      // window.addEventListener("scroll", () => {
-      //    _.throttle(doThatStuff, 100);
-      // });
-      // Only not doing it here to keep this Pen dependency-free.
-
-      window.addEventListener("scroll", event => {
-        let fromTop = window.scrollY;
-
-        mainNavLinks.forEach((link, index) => {
-          let section = document.getElementById(decodeURI(link.hash).substring(1));
-          let nextSection = null
-          if (mainNavLinks[index + 1]) {
-            nextSection = document.getElementById(decodeURI(mainNavLinks[index + 1].hash).substring(1));
-          }
-          if (section.offsetTop <= fromTop) {
-            if (nextSection) {
-              if (nextSection.offsetTop > fromTop) {
-                link.classList.add("current");
-              } else {
-                link.classList.remove("current");    
-              }
-            } else {
-              link.classList.add("current");
-            }
-          } else {
-            link.classList.remove("current");
-          }
-        });
-      });
+      gitalk.render('gitalk-container')
 
     </script>
+  
+
+  
+
+
+
+
   </body>
 </html>

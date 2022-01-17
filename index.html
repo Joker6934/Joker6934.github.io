@@ -1,52 +1,274 @@
+
 <html>
   <head>
-    <meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
+    
+<meta charset="utf-8" >
+
 <title>Jokerの小站</title>
-<link rel="shortcut icon" href="https://Joker6934.github.io//favicon.ico?v=1642431306340">
-<link href="https://cdn.jsdelivr.net/npm/remixicon@2.3.0/fonts/remixicon.css" rel="stylesheet">
+<meta name="description" content="闲逛的世俗之人">
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="shortcut icon" href="https://Joker6934.github.io//favicon.ico?v=1642431692243">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
 <link rel="stylesheet" href="https://Joker6934.github.io//styles/main.css">
-<link rel="alternate" type="application/atom+xml" title="Jokerの小站 - Atom Feed" href="https://Joker6934.github.io//atom.xml">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
 
 
 
-    <meta name="description" content="闲逛的世俗之人" />
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+
+
+
   </head>
   <body>
-    <div class="main">
-      <div class="main-content">
-        <div class="site-header">
-  <a href="https://Joker6934.github.io/">
-  <img class="avatar" src="https://Joker6934.github.io//images/avatar.png?v=1642431306340" alt="">
-  </a>
-  <h1 class="site-title">
-    Jokerの小站
-  </h1>
-  <p class="site-description">
-    闲逛的世俗之人
-  </p>
-  <div class="menu-container">
-    
-      
-        <a href="https://Joker6934.github.io/" class="menu">
-          首页
-        </a>
-      
-    
-      
-        <a href="https://Joker6934.github.io/archives" class="menu">
-          归档
-        </a>
-      
-    
-      
-        <a href="https://Joker6934.github.io/tags" class="menu">
-          标签
-        </a>
-      
-    
+    <div id="app" class="main">
+      <div class="site-header-container">
+  <div class="site-header">
+    <div class="left">
+      <a href="https://Joker6934.github.io/">
+        <img class="avatar" src="https://Joker6934.github.io//images/avatar.png?v=1642431692243" alt="" width="32px" height="32px">
+      </a>
+      <a href="https://Joker6934.github.io/">
+        <h1 class="site-title">Jokerの小站</h1>
+      </a>
+    </div>
+    <div class="right">
+      <transition name="fade">
+        <i class="icon" :class="{ 'icon-close-outline': menuVisible, 'icon-menu-outline': !menuVisible }" @click="menuVisible = !menuVisible"></i>
+      </transition>
+    </div>
   </div>
+</div>
+
+<transition name="fade">
+  <div class="menu-container" style="display: none;" v-show="menuVisible">
+    <div class="menu-list">
+      
+        
+          <a href="https://Joker6934.github.io/" class="menu purple-link">
+            首页
+          </a>
+        
+      
+        
+          <a href="https://Joker6934.github.io/archives" class="menu purple-link">
+            归档
+          </a>
+        
+      
+        
+          <a href="https://Joker6934.github.io/tags" class="menu purple-link">
+            标签
+          </a>
+        
+      
+    </div>
+  </div>
+</transition>
+
+
+      <div class="content-container">
+        
+        
+<section class="post-item">
+    <div class="content">
+      <a href="https://Joker6934.github.io/post/anaconda-an-zhuang-he-tensorflow-de-pei-zhi/">
+        <h2 class="post-title">Anaconda安装和Tensorflow的配置</h2>
+      </a>
+      <div class="post-abstract">
+        <p>写这个的时候其实我已经安装好了好久，但是还是想在写写，因为太难了当时</p>
+
+      </div>
+      <div class="post-info">
+        <span><i class="icon icon-calendar-outline"></i> 2021-02-14</span>
+        
+      </div>
+    </div>
+    
+      <a href="https://Joker6934.github.io/post/anaconda-an-zhuang-he-tensorflow-de-pei-zhi/">
+        <div class="feature-container" style="background-image: url('https://Joker6934.github.io//post-images/anaconda-an-zhuang-he-tensorflow-de-pei-zhi.jpg')">
+        </div>
+      </a>
+    
+  </section>
+
+<section class="post-item">
+    <div class="content">
+      <a href="https://Joker6934.github.io/post/python-xue-xi/">
+        <h2 class="post-title">Python学习</h2>
+      </a>
+      <div class="post-abstract">
+        <p>复试需要，python必须学一下，用的书是蟒蛇书，《Python编程 从入门到实践 第二版》还有《Python程序设计 第二版 董付国著》</p>
+
+      </div>
+      <div class="post-info">
+        <span><i class="icon icon-calendar-outline"></i> 2021-02-05</span>
+        
+      </div>
+    </div>
+    
+      <a href="https://Joker6934.github.io/post/python-xue-xi/">
+        <div class="feature-container" style="background-image: url('https://Joker6934.github.io//post-images/python-xue-xi.jpg')">
+        </div>
+      </a>
+    
+  </section>
+
+<section class="post-item">
+    <div class="content">
+      <a href="https://Joker6934.github.io/post/grideagithubping-lun-xi-tong/">
+        <h2 class="post-title">Gridea+Github+Gitalk评论系统</h2>
+      </a>
+      <div class="post-abstract">
+        <p>最近想开始写博客了，上网查发现还是Gridea这种简单耐看的符合我的胃口，哈哈哈😃<br>
+废话不多说，开始聊聊我在部署安装时候踩的坑和解决措施吧😭</p>
+
+      </div>
+      <div class="post-info">
+        <span><i class="icon icon-calendar-outline"></i> 2021-02-05</span>
+        
+      </div>
+    </div>
+    
+      <a href="https://Joker6934.github.io/post/grideagithubping-lun-xi-tong/">
+        <div class="feature-container" style="background-image: url('https://Joker6934.github.io//post-images/grideagithubping-lun-xi-tong.jpg')">
+        </div>
+      </a>
+    
+  </section>
+
+<section class="post-item">
+    <div class="content">
+      <a href="https://Joker6934.github.io/post/man-man-tensorflow-qiu-xue-zhi-lu/">
+        <h2 class="post-title">漫漫Tensorflow求学之路</h2>
+      </a>
+      <div class="post-abstract">
+        
+      </div>
+      <div class="post-info">
+        <span><i class="icon icon-calendar-outline"></i> 2021-02-04</span>
+        
+      </div>
+    </div>
+    
+      <a href="https://Joker6934.github.io/post/man-man-tensorflow-qiu-xue-zhi-lu/">
+        <div class="feature-container" style="background-image: url('https://Joker6934.github.io//post-images/man-man-tensorflow-qiu-xue-zhi-lu.jpg')">
+        </div>
+      </a>
+    
+  </section>
+
+<section class="post-item">
+    <div class="content">
+      <a href="https://Joker6934.github.io/post/pycharm-he-idea-ji-huo/">
+        <h2 class="post-title">Pycharm和Idea激活</h2>
+      </a>
+      <div class="post-abstract">
+        
+      </div>
+      <div class="post-info">
+        <span><i class="icon icon-calendar-outline"></i> 2021-02-04</span>
+        
+          <span>
+            <i class="icon icon-pricetags-outline"></i>
+            
+              <a href="https://Joker6934.github.io/tag/tfPzVzieC/">
+                Python
+                
+                  ，
+                
+              </a>
+            
+              <a href="https://Joker6934.github.io/tag/Iy7vr-4kw/">
+                Gridea
+                
+              </a>
+            
+          </span>
+        
+      </div>
+    </div>
+    
+      <a href="https://Joker6934.github.io/post/pycharm-he-idea-ji-huo/">
+        <div class="feature-container" style="background-image: url('https://Joker6934.github.io//post-images/pycharm-he-idea-ji-huo.jpg')">
+        </div>
+      </a>
+    
+  </section>
+
+<section class="post-item">
+    <div class="content">
+      <a href="https://Joker6934.github.io/post/about/">
+        <h2 class="post-title">关于</h2>
+      </a>
+      <div class="post-abstract">
+        
+      </div>
+      <div class="post-info">
+        <span><i class="icon icon-calendar-outline"></i> 2019-01-25</span>
+        
+          <span>
+            <i class="icon icon-pricetags-outline"></i>
+            
+              <a href="https://Joker6934.github.io/tag/Iy7vr-4kw/">
+                Gridea
+                
+              </a>
+            
+          </span>
+        
+      </div>
+    </div>
+    
+  </section>
+
+<section class="post-item">
+    <div class="content">
+      <a href="https://Joker6934.github.io/post/hello-gridea/">
+        <h2 class="post-title">Hello Gridea</h2>
+      </a>
+      <div class="post-abstract">
+        <p>👏  欢迎使用 <strong>Gridea</strong> ！<br>
+✍️  <strong>Gridea</strong> 一个静态博客写作客户端。你可以用它来记录你的生活、心情、知识、笔记、创意... ...</p>
+
+      </div>
+      <div class="post-info">
+        <span><i class="icon icon-calendar-outline"></i> 2018-12-12</span>
+        
+          <span>
+            <i class="icon icon-pricetags-outline"></i>
+            
+              <a href="https://Joker6934.github.io/tag/Iy7vr-4kw/">
+                Gridea
+                
+              </a>
+            
+          </span>
+        
+      </div>
+    </div>
+    
+      <a href="https://Joker6934.github.io/post/hello-gridea/">
+        <div class="feature-container" style="background-image: url('https://Joker6934.github.io//post-images/hello-gridea.png')">
+        </div>
+      </a>
+    
+  </section>
+
+
+<div class="pagination-container">
+  
+  
+</div>
+
+
+      </div>
+
+      <div class="site-footer">
+  <div class="slogan">闲逛的世俗之人</div>
   <div class="social-container">
     
       
@@ -60,201 +282,26 @@
       
     
   </div>
+  Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | <a class="rss" href="https://Joker6934.github.io//atom.xml" target="_blank">RSS</a>
 </div>
 
-    
-        <div class="post-container">
-  
-    <article class="post">
-      <a href="https://Joker6934.github.io/post/anaconda-an-zhuang-he-tensorflow-de-pei-zhi/">
-        <h2 class="post-title">Anaconda安装和Tensorflow的配置</h2>
-      </a>
-      <div class="post-info">
-        <span>
-          2021-02-14
-        </span>
-        <span>
-          1 min read
-        </span>
-        
-      </div>
-      
-        <a href="https://Joker6934.github.io/post/anaconda-an-zhuang-he-tensorflow-de-pei-zhi/" class="post-feature-image" style="background-image: url('https://Joker6934.github.io//post-images/anaconda-an-zhuang-he-tensorflow-de-pei-zhi.jpg')">
-        </a>
-      
-      <div class="post-abstract">
-        <p>写这个的时候其实我已经安装好了好久，但是还是想在写写，因为太难了当时</p>
 
-      </div>
-    </article>
-  
-    <article class="post">
-      <a href="https://Joker6934.github.io/post/python-xue-xi/">
-        <h2 class="post-title">Python学习</h2>
-      </a>
-      <div class="post-info">
-        <span>
-          2021-02-05
-        </span>
-        <span>
-          12 min read
-        </span>
-        
-      </div>
-      
-        <a href="https://Joker6934.github.io/post/python-xue-xi/" class="post-feature-image" style="background-image: url('https://Joker6934.github.io//post-images/python-xue-xi.jpg')">
-        </a>
-      
-      <div class="post-abstract">
-        <p>复试需要，python必须学一下，用的书是蟒蛇书，《Python编程 从入门到实践 第二版》还有《Python程序设计 第二版 董付国著》</p>
-
-      </div>
-    </article>
-  
-    <article class="post">
-      <a href="https://Joker6934.github.io/post/grideagithubping-lun-xi-tong/">
-        <h2 class="post-title">Gridea+Github+Gitalk评论系统</h2>
-      </a>
-      <div class="post-info">
-        <span>
-          2021-02-05
-        </span>
-        <span>
-          3 min read
-        </span>
-        
-      </div>
-      
-        <a href="https://Joker6934.github.io/post/grideagithubping-lun-xi-tong/" class="post-feature-image" style="background-image: url('https://Joker6934.github.io//post-images/grideagithubping-lun-xi-tong.jpg')">
-        </a>
-      
-      <div class="post-abstract">
-        <p>最近想开始写博客了，上网查发现还是Gridea这种简单耐看的符合我的胃口，哈哈哈😃<br>
-废话不多说，开始聊聊我在部署安装时候踩的坑和解决措施吧😭</p>
-
-      </div>
-    </article>
-  
-    <article class="post">
-      <a href="https://Joker6934.github.io/post/man-man-tensorflow-qiu-xue-zhi-lu/">
-        <h2 class="post-title">漫漫Tensorflow求学之路</h2>
-      </a>
-      <div class="post-info">
-        <span>
-          2021-02-04
-        </span>
-        <span>
-          1 min read
-        </span>
-        
-      </div>
-      
-        <a href="https://Joker6934.github.io/post/man-man-tensorflow-qiu-xue-zhi-lu/" class="post-feature-image" style="background-image: url('https://Joker6934.github.io//post-images/man-man-tensorflow-qiu-xue-zhi-lu.jpg')">
-        </a>
-      
-      <div class="post-abstract">
-        
-      </div>
-    </article>
-  
-    <article class="post">
-      <a href="https://Joker6934.github.io/post/pycharm-he-idea-ji-huo/">
-        <h2 class="post-title">Pycharm和Idea激活</h2>
-      </a>
-      <div class="post-info">
-        <span>
-          2021-02-04
-        </span>
-        <span>
-          1 min read
-        </span>
-        
-          <a href="https://Joker6934.github.io/tag/tfPzVzieC/" class="post-tag">
-            # Python
-          </a>
-        
-          <a href="https://Joker6934.github.io/tag/Iy7vr-4kw/" class="post-tag">
-            # Gridea
-          </a>
-        
-      </div>
-      
-        <a href="https://Joker6934.github.io/post/pycharm-he-idea-ji-huo/" class="post-feature-image" style="background-image: url('https://Joker6934.github.io//post-images/pycharm-he-idea-ji-huo.jpg')">
-        </a>
-      
-      <div class="post-abstract">
-        
-      </div>
-    </article>
-  
-    <article class="post">
-      <a href="https://Joker6934.github.io/post/about/">
-        <h2 class="post-title">关于</h2>
-      </a>
-      <div class="post-info">
-        <span>
-          2019-01-25
-        </span>
-        <span>
-          1 min read
-        </span>
-        
-          <a href="https://Joker6934.github.io/tag/Iy7vr-4kw/" class="post-tag">
-            # Gridea
-          </a>
-        
-      </div>
-      
-      <div class="post-abstract">
-        
-      </div>
-    </article>
-  
-    <article class="post">
-      <a href="https://Joker6934.github.io/post/hello-gridea/">
-        <h2 class="post-title">Hello Gridea</h2>
-      </a>
-      <div class="post-info">
-        <span>
-          2018-12-12
-        </span>
-        <span>
-          2 min read
-        </span>
-        
-          <a href="https://Joker6934.github.io/tag/Iy7vr-4kw/" class="post-tag">
-            # Gridea
-          </a>
-        
-      </div>
-      
-        <a href="https://Joker6934.github.io/post/hello-gridea/" class="post-feature-image" style="background-image: url('https://Joker6934.github.io//post-images/hello-gridea.png')">
-        </a>
-      
-      <div class="post-abstract">
-        <p>👏  欢迎使用 <strong>Gridea</strong> ！<br>
-✍️  <strong>Gridea</strong> 一个静态博客写作客户端。你可以用它来记录你的生活、心情、知识、笔记、创意... ...</p>
-
-      </div>
-    </article>
-  
-</div>
-
-    
-        <div class="pagination-container">
-  
-  
-</div>
-
-    
-        <div class="site-footer">
-  Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a>
-  <a class="rss" href="https://Joker6934.github.io//atom.xml" target="_blank">
-    <i class="ri-rss-line"></i> RSS
-  </a>
-</div>
-
-      </div>
     </div>
+    <script type="application/javascript">
+
+hljs.initHighlightingOnLoad()
+
+var app = new Vue({
+  el: '#app',
+  data: {
+    menuVisible: false,
+  },
+})
+
+</script>
+
+
+
+
   </body>
 </html>

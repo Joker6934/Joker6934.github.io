@@ -1,95 +1,95 @@
+
+<!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
+    
+<meta charset="utf-8" >
+
 <title>Python学习 | Jokerの小站</title>
-<link rel="shortcut icon" href="https://Joker6934.github.io//favicon.ico?v=1642431306340">
-<link href="https://cdn.jsdelivr.net/npm/remixicon@2.3.0/fonts/remixicon.css" rel="stylesheet">
+<meta name="description" content="闲逛的世俗之人">
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="shortcut icon" href="https://Joker6934.github.io//favicon.ico?v=1642431692243">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
 <link rel="stylesheet" href="https://Joker6934.github.io//styles/main.css">
-<link rel="alternate" type="application/atom+xml" title="Python学习 | Jokerの小站 - Atom Feed" href="https://Joker6934.github.io//atom.xml">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
+
+
+  
+    <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css" />
+  
+
+  
+
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
 
 
 
-    <meta name="description" content="复试需要，python必须学一下，用的书是蟒蛇书，《Python编程 从入门到实践 第二版》还有《Python程序设计 第二版 董付国著》
-
-现在是2月6号了，我学到了蟒蛇书的9.3继承了，前几章还行，第八章有点难度了
-2.9
-
-今天遇到了..." />
-    <meta name="keywords" content="" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
-    <script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
   </head>
   <body>
-    <div class="main">
-      <div class="main-content">
-        <div class="site-header">
-  <a href="https://Joker6934.github.io/">
-  <img class="avatar" src="https://Joker6934.github.io//images/avatar.png?v=1642431306340" alt="">
-  </a>
-  <h1 class="site-title">
-    Jokerの小站
-  </h1>
-  <p class="site-description">
-    闲逛的世俗之人
-  </p>
-  <div class="menu-container">
-    
-      
-        <a href="https://Joker6934.github.io/" class="menu">
-          首页
-        </a>
-      
-    
-      
-        <a href="https://Joker6934.github.io/archives" class="menu">
-          归档
-        </a>
-      
-    
-      
-        <a href="https://Joker6934.github.io/tags" class="menu">
-          标签
-        </a>
-      
-    
-  </div>
-  <div class="social-container">
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
+    <div id="app" class="main">
+      <div class="site-header-container">
+  <div class="site-header">
+    <div class="left">
+      <a href="https://Joker6934.github.io/">
+        <img class="avatar" src="https://Joker6934.github.io//images/avatar.png?v=1642431692243" alt="" width="32px" height="32px">
+      </a>
+      <a href="https://Joker6934.github.io/">
+        <h1 class="site-title">Jokerの小站</h1>
+      </a>
+    </div>
+    <div class="right">
+      <transition name="fade">
+        <i class="icon" :class="{ 'icon-close-outline': menuVisible, 'icon-menu-outline': !menuVisible }" @click="menuVisible = !menuVisible"></i>
+      </transition>
+    </div>
   </div>
 </div>
 
+<transition name="fade">
+  <div class="menu-container" style="display: none;" v-show="menuVisible">
+    <div class="menu-list">
+      
+        
+          <a href="https://Joker6934.github.io/" class="menu purple-link">
+            首页
+          </a>
+        
+      
+        
+          <a href="https://Joker6934.github.io/archives" class="menu purple-link">
+            归档
+          </a>
+        
+      
+        
+          <a href="https://Joker6934.github.io/tags" class="menu purple-link">
+            标签
+          </a>
+        
+      
+    </div>
+  </div>
+</transition>
+
+
+      <div class="content-container">
         <div class="post-detail">
-          <article class="post">
-            <h2 class="post-title">
-              Python学习
-            </h2>
-            <div class="post-info">
-              <span>
-                2021-02-05
-              </span>
-              <span>
-                12 min read
-              </span>
-              
+          
+            <div class="feature-container" style="background-image: url('https://Joker6934.github.io//post-images/python-xue-xi.jpg')">
             </div>
+          
+          <h2 class="post-title">Python学习</h2>
+          <div class="post-info post-detail-info">
+            <span><i class="icon-calendar-outline"></i> 2021-02-05</span>
             
-              <img class="post-feature-image" src="https://Joker6934.github.io//post-images/python-xue-xi.jpg" alt="">
-            
-            <div class="post-content-wrapper">
-              <div class="post-content">
-                <p>复试需要，python必须学一下，用的书是蟒蛇书，《Python编程 从入门到实践 第二版》还有《Python程序设计 第二版 董付国著》</p>
+          </div>
+          <div class="post-content">
+            <p>复试需要，python必须学一下，用的书是蟒蛇书，《Python编程 从入门到实践 第二版》还有《Python程序设计 第二版 董付国著》</p>
 <!-- more -->
 <p>现在是2月6号了，我学到了蟒蛇书的9.3继承了，前几章还行，第八章有点难度了</p>
 <h1 id="29">2.9</h1>
@@ -307,179 +307,86 @@ readlines()读取所有行然后把它们作为一个字符串<strong>列表</st
 <p>---&gt;可以直接异或，他会自动先转换为二进制，运算完成后，会自动转换为整数类型&lt;---<br>
 <img src="https://Joker6934.github.io//post-images/1615106737727.png" alt="" loading="lazy"></p>
 
-              </div>
-              <div class="toc-container">
-                <ul class="markdownIt-TOC">
-<li><a href="#29">2.9</a>
-<ul>
-<li><a href="#%E4%BB%8A%E5%A4%A9%E9%81%87%E5%88%B0%E4%BA%86%E5%88%97%E8%A1%A8%E7%9A%84%E6%AF%94%E8%BE%83%E6%89%BE%E5%88%B0%E4%BA%86%E4%BB%A5%E4%B8%8B%E6%9C%89%E5%85%B3%E7%9A%84%E6%AF%94%E8%BE%83%E6%96%B9%E6%B3%95">今天遇到了列表的比较，找到了以下有关的比较方法：</a></li>
-<li><a href="#%E4%BB%A3%E7%A0%81">代码</a></li>
-<li><a href="#%E6%94%B9%E9%94%99">改错</a></li>
-<li><a href="#%E6%94%B9%E8%BF%87%E7%9A%84%E4%BB%A3%E7%A0%81">改过的代码</a></li>
-<li><a href="#%E7%BB%93%E6%9E%9C">结果</a></li>
-</ul>
-</li>
-<li><a href="#210">2.10</a>
-<ul>
-<li><a href="#%E4%BB%8A%E5%A4%A9%E9%81%87%E5%88%B0%E4%BA%86%E5%85%B3%E4%BA%8E%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E4%B8%80%E4%BA%9B%E9%97%AE%E9%A2%98">今天遇到了关于字符串的一些问题</a>
-<ul>
-<li><a href="#1%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84rstrip%E5%92%8Cstrip%E6%96%B9%E6%B3%95">1.字符串的rstrip()和strip()方法</a>
-<ul>
-<li><a href="#1rstrip">(1).rstrip()</a></li>
-<li><a href="#2strip">(2).strip()</a></li>
-</ul>
-</li>
-<li><a href="#2readline%E5%92%8Creadlines">2.readline()和readlines()</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a href="#211-213">2.11-2.13</a></li>
-<li><a href="#214">2.14</a>
-<ul>
-<li><a href="#%E4%BB%8A%E5%A4%A9%E9%81%87%E5%88%B0%E4%BA%86%E5%85%B3%E4%BA%8Eopen%E5%87%BD%E6%95%B0%E7%9A%84%E4%B8%80%E4%BA%9B%E9%97%AE%E9%A2%98">今天遇到了关于open函数的一些问题</a>
-<ul>
-<li><a href="#%E6%89%80%E4%BB%A5%E5%8F%AA%E6%9C%89%E5%9C%A8%E8%AF%BB%E6%88%96%E8%80%85%E8%AF%BB%E5%86%99%E6%97%B6%E6%96%87%E4%BB%B6%E4%B8%8D%E5%AD%98%E5%9C%A8%E4%BC%9A%E6%8A%A5%E9%94%99%E5%85%B6%E4%BB%96%E9%83%BD%E4%BC%9A%E7%9B%B4%E6%8E%A5%E5%88%9B%E5%BB%BA%E4%B8%80%E4%B8%AA%E6%96%B0%E7%9A%84%E6%96%87%E4%BB%B6">所以只有在<strong>读或者读写</strong>时，文件不存在<strong>会报错</strong>，其他都会直接创建一个新的文件</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a href="#215">2.15</a></li>
-<li><a href="#216">2.16</a>
-<ul>
-<li><a href="#%E4%BB%8A%E5%A4%A9%E5%BC%80%E5%A7%8B%E7%AC%AC11%E7%AB%A0%E9%A1%BA%E4%BE%BF%E5%A4%8D%E4%B9%A0%E4%BA%86%E4%B8%80%E4%B8%8B%E7%AC%AC9%E7%AB%A0">今天开始第11章，顺便复习了一下第9章</a></li>
-</ul>
-</li>
-<li><a href="#217">2.17</a>
-<ul>
-<li><a href="#%E4%BB%8A%E5%A4%A9%E9%81%87%E5%88%B0%E4%BA%86%E5%85%B3%E4%BA%8Epygame%E7%9A%84%E5%B1%8F%E5%B9%95%E5%92%8C%E8%83%8C%E6%99%AF%E7%9A%84%E4%B8%80%E4%BA%9B%E5%B0%8F%E9%97%AE%E9%A2%98">今天遇到了关于pygame的屏幕和背景的一些小问题</a></li>
-</ul>
-</li>
-<li><a href="#219">2.19</a>
-<ul>
-<li><a href="#%E7%BB%93%E6%9D%9F%E4%BA%86%E5%A4%96%E6%98%9F%E4%BA%BA%E7%9A%84%E9%A1%B9%E7%9B%AE%E8%9F%92%E8%9B%87%E4%B9%A6%E5%90%8E%E9%9D%A2%E7%9A%84%E5%9B%BE%E8%A1%A8%E5%8F%AF%E8%A7%86%E5%8C%96%E4%BB%80%E4%B9%88%E7%9A%84%E7%8E%B0%E5%9C%A8%E5%85%88%E4%B8%8D%E7%9C%8B%E4%BA%86">结束了外星人的项目，蟒蛇书后面的图表可视化什么的，现在先不看了</a></li>
-</ul>
-</li>
-<li><a href="#220">2.20</a></li>
-<li><a href="#32">3.2</a>
-<ul>
-<li><a href="#%E4%B8%80-read-readline%E5%92%8Creadlines%E7%9A%84%E5%8C%BA%E5%88%AB">一. read() readline()和readlines()的区别</a>
-<ul>
-<li><a href="#1read">1.read()</a></li>
-<li><a href="#2readline">2.readline()</a></li>
-<li><a href="#3readlines">3.readlines()</a></li>
-<li><a href="#split%E5%8F%AA%E8%83%BD%E5%AF%B9%E5%AD%97%E7%AC%A6%E4%B8%B2%E8%BF%9B%E8%A1%8C%E6%8B%86%E5%88%86">split()只能对字符串进行拆分</a></li>
-</ul>
-</li>
-<li><a href="#%E4%BA%8C-%E8%BF%9B%E5%88%B6%E8%BD%AC%E6%8D%A2">二. 进制转换</a></li>
-<li><a href="#%E4%B8%89replace%E5%87%BD%E6%95%B0">三.replace()函数</a></li>
-</ul>
-</li>
-<li><a href="#33">3.3</a>
-<ul>
-<li><a href="#%E5%AD%97%E7%AC%A6%E4%B8%B2%E8%BD%AC%E6%8D%A2%E4%B8%BA%E4%BA%8C%E8%BF%9B%E5%88%B6">字符串转换为二进制</a></li>
-</ul>
-</li>
-<li><a href="#37">3.7</a>
-<ul>
-<li><a href="#1%E6%95%B4%E6%95%B0%E7%B1%BB%E5%9E%8B%E8%83%BD%E4%B8%8D%E8%83%BD%E5%BC%82%E6%88%96">1.整数类型能不能异或</a></li>
-</ul>
-</li>
-</ul>
-
-              </div>
-            </div>
-          </article>
+          </div>
         </div>
 
         
           <div class="next-post">
-            <div class="next">下一篇</div>
-            <a href="https://Joker6934.github.io/post/grideagithubping-lun-xi-tong/">
+            <a class="purple-link" href="https://Joker6934.github.io/post/grideagithubping-lun-xi-tong/">
               <h3 class="post-title">
-                Gridea+Github+Gitalk评论系统
+                下一篇：Gridea+Github+Gitalk评论系统
               </h3>
             </a>
           </div>
-        
-
-        
           
-            <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
-<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+      </div>
 
-<div id="gitalk-container"></div>
+      
+        
+          <div id="gitalk-container"></div>
+        
 
-<script>
+        
+      
 
-  var gitalk = new Gitalk({
-    clientID: 'c48820c82bc8d74e8ab1',
-    clientSecret: '428543d4dd2d5b806831e143774de020cd20a498',
-    repo: 'Joker6934.github.io',
-    owner: 'Joker6934',
-    admin: ['Joker6934'],
-    id: (location.pathname).substring(0, 49),      // Ensure uniqueness and length less than 50
-    distractionFreeMode: false  // Facebook-like distraction free mode
-  })
+      <div class="site-footer">
+  <div class="slogan">闲逛的世俗之人</div>
+  <div class="social-container">
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+  </div>
+  Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | <a class="rss" href="https://Joker6934.github.io//atom.xml" target="_blank">RSS</a>
+</div>
 
-  gitalk.render('gitalk-container')
+
+    </div>
+    <script type="application/javascript">
+
+hljs.initHighlightingOnLoad()
+
+var app = new Vue({
+  el: '#app',
+  data: {
+    menuVisible: false,
+  },
+})
 
 </script>
 
-          
 
-          
-        
 
-        <div class="site-footer">
-  Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a>
-  <a class="rss" href="https://Joker6934.github.io//atom.xml" target="_blank">
-    <i class="ri-rss-line"></i> RSS
-  </a>
-</div>
-
-      </div>
-    </div>
-
+  
+    <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
     <script>
-      hljs.initHighlightingOnLoad()
 
-      let mainNavLinks = document.querySelectorAll(".markdownIt-TOC a");
+      var gitalk = new Gitalk({
+        clientID: 'c48820c82bc8d74e8ab1',
+        clientSecret: '428543d4dd2d5b806831e143774de020cd20a498',
+        repo: 'Joker6934.github.io',
+        owner: 'Joker6934',
+        admin: ['Joker6934'],
+        id: (location.pathname).substring(0, 49),      // Ensure uniqueness and length less than 50
+        distractionFreeMode: false  // Facebook-like distraction free mode
+      })
 
-      // This should probably be throttled.
-      // Especially because it triggers during smooth scrolling.
-      // https://lodash.com/docs/4.17.10#throttle
-      // You could do like...
-      // window.addEventListener("scroll", () => {
-      //    _.throttle(doThatStuff, 100);
-      // });
-      // Only not doing it here to keep this Pen dependency-free.
-
-      window.addEventListener("scroll", event => {
-        let fromTop = window.scrollY;
-
-        mainNavLinks.forEach((link, index) => {
-          let section = document.getElementById(decodeURI(link.hash).substring(1));
-          let nextSection = null
-          if (mainNavLinks[index + 1]) {
-            nextSection = document.getElementById(decodeURI(mainNavLinks[index + 1].hash).substring(1));
-          }
-          if (section.offsetTop <= fromTop) {
-            if (nextSection) {
-              if (nextSection.offsetTop > fromTop) {
-                link.classList.add("current");
-              } else {
-                link.classList.remove("current");    
-              }
-            } else {
-              link.classList.add("current");
-            }
-          } else {
-            link.classList.remove("current");
-          }
-        });
-      });
+      gitalk.render('gitalk-container')
 
     </script>
+  
+
+  
+
+
+
+
   </body>
 </html>
