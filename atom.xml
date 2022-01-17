@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://Joker6934.github.io/</id>
     <title>Jokerの小站</title>
-    <updated>2022-01-17T14:38:54.112Z</updated>
+    <updated>2022-01-17T14:42:40.654Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://Joker6934.github.io/"/>
     <link rel="self" href="https://Joker6934.github.io/atom.xml"/>
@@ -10,6 +10,394 @@
     <logo>https://Joker6934.github.io/images/avatar.png</logo>
     <icon>https://Joker6934.github.io/favicon.ico</icon>
     <rights>All rights reserved 2022, Jokerの小站</rights>
+    <entry>
+        <title type="html"><![CDATA[Anaconda安装和Tensorflow的配置]]></title>
+        <id>https://Joker6934.github.io/post/anaconda-an-zhuang-he-tensorflow-de-pei-zhi/</id>
+        <link href="https://Joker6934.github.io/post/anaconda-an-zhuang-he-tensorflow-de-pei-zhi/">
+        </link>
+        <updated>2021-02-14T08:29:18.000Z</updated>
+        <summary type="html"><![CDATA[<p>写这个的时候其实我已经安装好了好久，但是还是想在写写，因为太难了当时</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>写这个的时候其实我已经安装好了好久，但是还是想在写写，因为太难了当时</p>
+<!-- more -->
+<h1 id="️豆瓣源-yyds">✔️豆瓣源-yyds</h1>
+<p><code>pip3 install xxx -i https://pypi.doubanio.com/simple</code><br>
+如果获取就超时了，可以这样<br>
+<code>pip install requests -i http://pypi.douban.com/simple --trusted-host pypi.douban.com</code></p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Python学习]]></title>
+        <id>https://Joker6934.github.io/post/python-xue-xi/</id>
+        <link href="https://Joker6934.github.io/post/python-xue-xi/">
+        </link>
+        <updated>2021-02-05T13:22:48.000Z</updated>
+        <summary type="html"><![CDATA[<p>复试需要，python必须学一下，用的书是蟒蛇书，《Python编程 从入门到实践 第二版》还有《Python程序设计 第二版 董付国著》</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>复试需要，python必须学一下，用的书是蟒蛇书，《Python编程 从入门到实践 第二版》还有《Python程序设计 第二版 董付国著》</p>
+<!-- more -->
+<p>现在是2月6号了，我学到了蟒蛇书的9.3继承了，前几章还行，第八章有点难度了</p>
+<h1 id="29">2.9</h1>
+<hr>
+<h2 id="今天遇到了列表的比较找到了以下有关的比较方法">今天遇到了列表的比较，找到了以下有关的比较方法：</h2>
+<p>1.列表1 == 列表2 只能比较位置字符都相等的<br>
+列表.sort()可以比较位置不等的，但是sorted（列表）更好<br>
+其实set(列表1) == set(列表2)可以判断元素是否相等，不考虑顺序</p>
+<p>2.set(列表1).issubset(set(列表2))判断列表1是否在列表2中</p>
+<p>3.set(列表2).issuperset(set(列表1))判断列表2是否包含列表1</p>
+<p>4.set(列表1).intersection(set(列表2))取两个列表的交集</p>
+<p>5.set(列表1).symmetric_difference(set(列表2))取两个列表的不同成员</p>
+<p>6.差集：<br>
+set(列表1).difference(set(列表2))——列表1中有，列表2中没有的<br>
+set(列表2).difference(set(列表1))——列表2中有，列表1中没有的</p>
+<p>7.set(列表1).union(set(列表2))取并集</p>
+<h2 id="代码">代码</h2>
+<pre><code>from random import choice
+
+# 验证彩票中奖很难，the_list表示彩票的序列，my_ticket表示买的彩票的序列
+the_list = []
+my_ticket = []
+lists = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 'a', 'b', 'c', 'd', 'e'] # 彩票序列从这个list中挑选
+for i in range(0, 4):
+    the_list.append(choice(lists))  # 确定the_list，即中奖彩票序列
+
+count = 1
+while True:
+    print(f&quot;This is the {count} times to try...&quot;)  # 打印第几次成功
+    for i in range(0, 4):
+        my_ticket.append(choice(lists))
+    count += 1  # 每次my_ticket确定后count加一
+    if set(my_ticket) == set(the_list):
+        print(f&quot;Congratulate! You win the first award.\n The winning sequence is {the_list}.&quot;)
+        break
+</code></pre>
+<p>害，73523次还是没有出结果，看来很难了（也可能是我代码写错了？😤）</p>
+<h2 id="改错">改错</h2>
+<p>真的是我代码写错了，调试了一下，发现在while中的那个for循环写错了，每次if之后没有重置my_ticket，这样的话，第一次my_ticket是4个元素，第二次就是8个元素了，所以应该把my_ticket = []放在for循环前面！！😭太菜了，不过话说，debug这个功能真的好用，爱死发明这个功能的人了。</p>
+<h2 id="改过的代码">改过的代码</h2>
+<pre><code>from random import choice
+
+# 验证彩票中奖很难，the_list表示彩票的序列，my_ticket表示买的彩票的序列
+the_list = []
+
+lists = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 'a', 'b', 'c', 'd', 'e']
+for i in range(0, 4):
+    the_list.append(choice(lists))  # 确定the_list，即中奖彩票序列
+print(the_list)
+count = 1
+while True:
+    print(f&quot;This is the {count} times to try...&quot;)  # 打印第几次成功
+    my_ticket = []
+    for i in range(0, 4):
+        my_ticket.append(choice(lists))
+    # print(the_list)
+    # print(my_ticket)
+    count += 1  # 每次my_ticket确定后count加一
+    if set(my_ticket) == set(the_list):
+        print(f&quot;Congratulate! You win the first award.\n The winning sequence is {the_list}.&quot;)
+        break
+# print(set(['a', 1, 4, 3]) == set([1, 3, 4, 'a']))
+
+</code></pre>
+<h2 id="结果">结果</h2>
+<pre><code>E:\Anaconda\Anaconda\envs\tensorflow\python.exe E:/Pycharm/workplace/0208/lottery.py
+['d', 9, 6, 5]
+This is the 1 times to try...
+This is the 2 times to try...
+This is the 3 times to try...
+This is the 4 times to try...
+This is the 5 times to try...
+This is the 6 times to try...
+This is the 7 times to try...
+This is the 8 times to try...
+This is the 9 times to try...
+This is the 10 times to try...
+......
+This is the 1859 times to try...
+Congratulate! You win the first award.
+ The winning sequence is ['d', 9, 6, 5].
+
+Process finished with exit code 0
+</code></pre>
+<p>所以这个15个的序列的彩票都要1859次才能买中彩票。害，可想而知双色球这种彩票（红球33个选6个，蓝球16选1）要多少次哦。难怪叫公益彩票😂</p>
+<h1 id="210">2.10</h1>
+<hr>
+<h2 id="今天遇到了关于字符串的一些问题">今天遇到了关于字符串的一些问题</h2>
+<h3 id="1字符串的rstrip和strip方法">1.字符串的rstrip()和strip()方法</h3>
+<p>直接菜鸟编程链接：<a href="https://www.runoob.com/python/att-string-rstrip.html">rstrip()方法</a>和<a href="https://www.runoob.com/python/att-string-strip.html">strip()方法</a></p>
+<pre><code>strip() 方法用于移除字符串头尾指定的字符（默认为空格或换行符）或字符序列。
+注意：该方法只能删除开头或是结尾的字符，不能删除中间部分的字符。
+rstrip() 删除 string 字符串末尾的指定字符（默认为空格)
+</code></pre>
+<h4 id="1rstrip">(1).rstrip()</h4>
+<p>str.rstrip([chars]),chars 为指定删除的字符（默认为空格）,返回删除 string 字符串末尾的指定字符后生成的新字符串。</p>
+<h4 id="2strip">(2).strip()</h4>
+<p>str.strip([chars]),chars -- 移除字符串头尾指定的字符序列,返回移除字符串头尾指定的字符生成的新字符串。</p>
+<h3 id="2readline和readlines">2.readline()和readlines()</h3>
+<p>服了，就差了一个s，我就说怎么一直只能读取文件的一行，书上还说读全部行🤧</p>
+<h1 id="211-213">2.11-2.13</h1>
+<p>三天春节休息🚌🍴🤓<br>
+出行，吃饭，看电影</p>
+<h1 id="214">2.14</h1>
+<h2 id="今天遇到了关于open函数的一些问题">今天遇到了关于open函数的一些问题</h2>
+<p>在书上对于open函数的报错条件提示的不是很清楚，有时候一个例子会报错，有时候会自动新建一个文件，这让我在对异常的处理时很糊涂。</p>
+<p>open()函数完整的语法格式为：</p>
+<pre><code>open(file, mode=‘r’, buffering=None, encoding=None, errors=None, newline=None, closefd=True)
+</code></pre>
+<p>函数定义的参数挺多，这里我们着重讲解mode——文件打开模式。mode参数有两大类，分别用来指定打开文件的文件格式和读写模式。</p>
+<p>文件格式相关参数</p>
+<p>t：以文本格式打开文件(<strong>默认</strong>)。一般用于文本文件，如：txt。<br>
+b：以二进制格式打开文件。一般用于非文本文件，如：图片。<br>
+这一类参数可以与其它的模式参数组合使用，用于指定打开文件的格式，需要根据你要打开文件的类型进行选择。</p>
+<p>读写模式相关参数</p>
+<p>r：以只读方式打开文件(<strong>默认模式</strong>)。文件指针定位在文件头的位置。如果<code>文件不存在会报错。</code><br>
+w：以只写方式打开文件。如果文件存在，则打开文件，清空文件内容，从文件头开始编辑；如果<code>文件不存在，则创建新文件，打开编辑。</code><br>
+a：以追加方式打开文件，同样是只写，不允许进行读操作。如果文件存在，则打开文件，将文件指针定位到文件尾。因此，新的内容是追加在已有内容之后。如果<code>文件不存在，则创建新文件</code>进行写入。<br>
++：打开一个文件进行更新(可读写)。<br>
+<em>注意：该模式不能单独使用，需要与r/w/a组合使用。打开文件后文件指针的位置取决于另一个组合参数。</em></p>
+<p>组合模式</p>
+<p>r+：打开一个文件用于读写。如果文件存在，则打开文件，将文件指针定位在文件头，新写入的内容在原有内容的前面；如果<code>文件不存在会报错。</code><br>
+w+：打开一个文件用于读写。如果文件存在，则打开文件，清空原有内容，进入编辑模式；如果文件不存在，则<code>创建一个新文件</code>进行读写操作。<br>
+a+：以追加模式打开一个文件用于读写。如果文件存在，则打开文件，将文件指针定位在文件尾，新写入的内容在原有内容的后面；如果<code>文件不存在，则创建一个新文件</code>用于读写。</p>
+<h3 id="所以只有在读或者读写时文件不存在会报错其他都会直接创建一个新的文件">所以只有在<strong>读或者读写</strong>时，文件不存在<strong>会报错</strong>，其他都会直接创建一个新的文件</h3>
+<h1 id="215">2.15</h1>
+<p>今天写的格外顺畅，没有出现什么问题，可能是我写的有点少，才写了两个课后练习。<br>
+感觉第9章的类有点忘记了，特别时那些__init__什么的，还有什么实列属性什么的😱<br>
+等我把第11章看完，第一部分结束后在来一边复习吧，太慢了啊喂</p>
+<h1 id="216">2.16</h1>
+<h2 id="今天开始第11章顺便复习了一下第9章">今天开始第11章，顺便复习了一下第9章</h2>
+<p>Ok，结束了第11章，现在开始第二部分，开始做一个书上的游戏项目😁</p>
+<h1 id="217">2.17</h1>
+<h2 id="今天遇到了关于pygame的屏幕和背景的一些小问题">今天遇到了关于pygame的屏幕和背景的一些小问题</h2>
+<p>动态屏幕大小的背景，更改书上的代码使更简洁<br>
+在飞船移动的时候出现了问题，在设计了可变飞船移速的时候不能动了，然后就觉得是传递float变量值的时候出错了，果然，把它注释掉就可以动了，但是发现左右移动速度不一样（这样的问题海星），然后仔细比对发现是我看错了，把self.x写成了self.rect.x了。服了。</p>
+<h1 id="219">2.19</h1>
+<h2 id="结束了外星人的项目蟒蛇书后面的图表可视化什么的现在先不看了">结束了外星人的项目，蟒蛇书后面的图表可视化什么的，现在先不看了</h2>
+<p>开始Python程序设计的复习了，现在离出成绩还有一个星期左右，离复试还有一个月左右，加油加油加油！！！</p>
+<h1 id="220">2.20</h1>
+<p>今天先把论文开题报告写了一半，明天写好先给老师看一下吧，离结束日期还有8天，还来得及。具体实现要抓紧了，因为复试面试也差不多要中期检查了</p>
+<h1 id="32">3.2</h1>
+<p>现在在学校里了，昨天就写了05年的真题，但是太菜了，2个小时才写了一道题，而且感觉不是很优秀的解决方案，今天看了一下还是没有什么能改进的。<br>
+前几天把论文写好了，然后这些天感觉就没有好好学习了，现在到复试还剩下不到一个月了，一定要好好弄，进了复试（74名就很迷，太菜了）就不能留遗憾。<br>
+现在就按照计划一步步来吧，认真对待才能有所成绩！！！</p>
+<h2 id="一-read-readline和readlines的区别">一. read() readline()和readlines()的区别</h2>
+<h3 id="1read">1.read()</h3>
+<p>特点是：读取整个文件，将文件内容放到一个<strong>字符串变量</strong>中。<br>
+劣势是：如果文件非常大，尤其是大于内存时，无法使用read()方法。<br>
+read()直接读取字节到字符串中，包括了换行符</p>
+<h3 id="2readline">2.readline()</h3>
+<p>特点：readline()方法每次读取<strong>一行</strong>；返回的是一个字符串对象，保持当前行的内存<br>
+缺点：比readlines慢得多<br>
+readline()  读取整行，包括行结束符，并作为字符串返回</p>
+<h3 id="3readlines">3.readlines()</h3>
+<p>特点：一次性读取整个文件；自动将文件内容分析成一个行的列表。<br>
+readlines()读取所有行然后把它们作为一个字符串<strong>列表</strong>返回。</p>
+<h3 id="split只能对字符串进行拆分">split()只能对字符串进行拆分</h3>
+<h2 id="二-进制转换">二. 进制转换</h2>
+<p>使用Python内置函数：bin()、oct()、int()、hex()可实现进制转换。</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">⬇️</th>
+<th style="text-align:center">2进制</th>
+<th style="text-align:center">8进制</th>
+<th style="text-align:center">10进制</th>
+<th style="text-align:center">16进制</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">2进制</td>
+<td style="text-align:center"></td>
+<td style="text-align:center">bin(int(x, 8))</td>
+<td style="text-align:center">bin(int(x, 10))</td>
+<td style="text-align:center">bin(int(x, 16))</td>
+</tr>
+<tr>
+<td style="text-align:center">8进制</td>
+<td style="text-align:center">oct(int(x, 2))</td>
+<td style="text-align:center"></td>
+<td style="text-align:center">oct(int(x, 10))</td>
+<td style="text-align:center">oct(int(x, 16))</td>
+</tr>
+<tr>
+<td style="text-align:center">10进制</td>
+<td style="text-align:center">int(x, 2)</td>
+<td style="text-align:center">int(x, 8)</td>
+<td style="text-align:center"></td>
+<td style="text-align:center">int(x, 16)</td>
+</tr>
+<tr>
+<td style="text-align:center">16进制</td>
+<td style="text-align:center">hex(int(x, 2))</td>
+<td style="text-align:center">hex(int(x, 8))</td>
+<td style="text-align:center">hex(int(x, 10))</td>
+<td style="text-align:center"></td>
+</tr>
+</tbody>
+</table>
+<h2 id="三replace函数">三.replace()函数</h2>
+<p><code>s1.replace(s2, s3) # 将s1中的s2用s3替换掉</code><br>
+还有两种方式可以替换字符串的内容<br>
+<img src="https://Joker6934.github.io//post-images/1614689169256.png" alt="" loading="lazy"></p>
+<h1 id="33">3.3</h1>
+<h2 id="字符串转换为二进制">字符串转换为二进制</h2>
+<p><img src="https://Joker6934.github.io//post-images/1614859284290.png" alt="" loading="lazy"><br>
+或者<br>
+<img src="https://Joker6934.github.io//post-images/1614859460814.png" alt="" loading="lazy"></p>
+<h1 id="37">3.7</h1>
+<p>好几天没有好好学习了，今天开始到复试都不能在瞎搞了！！！！<br>
+今天遇到了异或的问题</p>
+<h2 id="1整数类型能不能异或">1.整数类型能不能异或</h2>
+<p>---&gt;可以直接异或，他会自动先转换为二进制，运算完成后，会自动转换为整数类型&lt;---<br>
+<img src="https://Joker6934.github.io//post-images/1615106737727.png" alt="" loading="lazy"></p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Gridea+Github+Gitalk评论系统]]></title>
+        <id>https://Joker6934.github.io/post/grideagithubping-lun-xi-tong/</id>
+        <link href="https://Joker6934.github.io/post/grideagithubping-lun-xi-tong/">
+        </link>
+        <updated>2021-02-05T11:10:26.000Z</updated>
+        <summary type="html"><![CDATA[<p>最近想开始写博客了，上网查发现还是Gridea这种简单耐看的符合我的胃口，哈哈哈😃<br>
+废话不多说，开始聊聊我在部署安装时候踩的坑和解决措施吧😭</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>最近想开始写博客了，上网查发现还是Gridea这种简单耐看的符合我的胃口，哈哈哈😃<br>
+废话不多说，开始聊聊我在部署安装时候踩的坑和解决措施吧😭</p>
+<!-- more -->
+<h1 id="1gridea的安装">1.Gridea的安装</h1>
+<p>下载地址：<a href="https://github.com/getgridea/gridea">Github</a>或者<a href="https://gridea.dev/">Gridea官网</a></p>
+<h2 id="1github方式">（1）Github方式</h2>
+<p><img src="https://Joker6934.github.io//post-images/1612524456488.png" alt="" loading="lazy"><br>
+在这个页面往下滑，找到download<br>
+<img src="https://Joker6934.github.io//post-images/1612524482163.png" alt="" loading="lazy"><br>
+<img src="https://Joker6934.github.io//post-images/1612524488385.png" alt="" loading="lazy"><br>
+我现在的最新版本是0.9.2<br>
+我就下载了<code>.exe</code>文件，然后这样无脑安装就行了<img src="https://Joker6934.github.io//post-images/1612524581942.png" alt="" loading="lazy"></p>
+<h2 id="2官网方式">（2）官网方式</h2>
+<p><img src="https://Joker6934.github.io//post-images/1612524663979.png" alt="" loading="lazy"><br>
+点击立即开始，下载对应的版本<img src="https://Joker6934.github.io//post-images/1612524692197.png" alt="" loading="lazy"></p>
+<h1 id="2配置github">2.配置GitHub</h1>
+<p>这个开始应该就只有下面两个文章，我已经写了几个博客，就不想改了，嘿嘿😉<br>
+<img src="https://Joker6934.github.io//post-images/1612524859068.png" alt="" loading="lazy"><br>
+<code>现在已经安装了Gridea，只要在Github创建对应的仓库就好了</code><br>
+打开Github，创建一个仓库<br>
+<img src="https://Joker6934.github.io//post-images/1612525000048.png" alt="" loading="lazy"><br>
+<img src="https://Joker6934.github.io//post-images/1612526930070.png" alt="" loading="lazy"><br>
+然后打开仓库，应该只有一个Readme文档 <code>额，我已经创建过了，所以就有这么多文件</code><br>
+<img src="https://Joker6934.github.io//post-images/1612526977250.png" alt="" loading="lazy"><br>
+这时候这个仓库名就是你的博客网站的网址，但是现在进去肯定是404，哈哈哈，因为还没有配置完成<br>
+<code>我的配置好了，就是这样的啦</code><br>
+<img src="https://Joker6934.github.io//post-images/1612527532906.png" alt="" loading="lazy"></p>
+<h1 id="3配置gridea">3.配置Gridea</h1>
+<p>在Gridea上的基础设置如下，Token还没创建，等等创建</p>
+<h2 id="1创建token">(1)创建Token</h2>
+<p>按照下面的步骤就可<br>
+<img src="https://Joker6934.github.io//post-images/1612528003397.png" alt="" loading="lazy"><br>
+<img src="https://Joker6934.github.io//post-images/1612528033713.png" alt="" loading="lazy"><br>
+<img src="https://Joker6934.github.io//post-images/1612528042336.png" alt="" loading="lazy"><br>
+保存就会出现Token，记得找个位置存起来，因为关掉这个页面就<code>看不到了</code><br>
+<img src="https://Joker6934.github.io//post-images/1612528047952.png" alt="" loading="lazy"><br>
+把这个Token复制到这个里<img src="https://Joker6934.github.io//post-images/1612528141379.png" alt="" loading="lazy"><br>
+保存然后<code>同步</code>就OK了<br>
+<img src="https://Joker6934.github.io//post-images/1612529463013.png" alt="" loading="lazy"><br>
+同步成功！！</p>
+<h2 id="2访问自己的网页">(2)访问自己的网页</h2>
+<p>这时候网站其实已经搭好了，但是要在Github仓库里刷新一下才能看见，<code>一定要刷新啊啊啊</code><br>
+然后，仓库就这样了<br>
+<img src="https://Joker6934.github.io//post-images/1612528310259.png" alt="" loading="lazy"><br>
+这时候访问你的网站，网址是你的仓库名。当当当！！！<br>
+<img src="https://Joker6934.github.io//post-images/1612528353584.png" alt="" loading="lazy"><br>
+激不激动。🤗</p>
+<h1 id="4设置基于gitalk的评论系统">4.设置基于Gitalk的评论系统</h1>
+<p>1.首先电脑上要有git，直接百度git安装即可。<br>
+<img src="https://Joker6934.github.io//post-images/1612528496054.png" alt="" loading="lazy"><br>
+然后查看一下，在Git <img src="https://Joker6934.github.io//post-images/1612528605420.png" alt="" loading="lazy">Bash中输入<code>git --version</code>查看，出现下面这个就表示安装成功<br>
+其实在Windows的cmd中敲这个代码也可以查看<br>
+出现这个也可。<br>
+<img src="https://Joker6934.github.io//post-images/1612528699589.png" alt="" loading="lazy"><br>
+2.在GitHub上设置<br>
+按照下面的步骤<br>
+<img src="https://Joker6934.github.io//post-images/1612529185422.png" alt="" loading="lazy"><br>
+<img src="https://Joker6934.github.io//post-images/1612529191817.png" alt="" loading="lazy"><br>
+新建一个OAuth App<br>
+<img src="https://Joker6934.github.io//post-images/1612529215702.png" alt="" loading="lazy"><br>
+名字地址按照具体情况来填写就行<br>
+<img src="https://Joker6934.github.io//post-images/1612529222002.png" alt="" loading="lazy"><br>
+保存后会出现一个<code>Client ID</code>和一个<code>Client Secret</code>，记得保存，这个也会刷新<code>就看不见了</code><br>
+3.然后在Gridea中<br>
+<img src="https://Joker6934.github.io//post-images/1612529239072.png" alt="" loading="lazy"><br>
+也要保存，然后同步，再在Github仓库那里<strong>刷新</strong>一下<br>
+然后访问你的网站<br>
+随便点击一篇文章，滑到最后，就会有评论啦<br>
+<img src="https://Joker6934.github.io//post-images/1612530334014.png" alt="" loading="lazy"><br>
+如果第一次，出现这样的要登陆，登录一下就可以了<br>
+<img src="https://Joker6934.github.io//post-images/1612530435665.jpg" alt="" loading="lazy"></p>
+<h2 id="这就是全部了开始写你的第一篇博客吧">这就是全部了，开始写你的第一篇博客吧！！😉</h2>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[漫漫Tensorflow求学之路]]></title>
+        <id>https://Joker6934.github.io/post/man-man-tensorflow-qiu-xue-zhi-lu/</id>
+        <link href="https://Joker6934.github.io/post/man-man-tensorflow-qiu-xue-zhi-lu/">
+        </link>
+        <updated>2021-02-04T14:48:54.000Z</updated>
+        <content type="html"><![CDATA[<h1 id="准备工作">准备工作</h1>
+<p>先学着B站的视频吴恩达深度学习课程，感觉他讲的不错，比北大那个教授教的要清楚一点，北大那个要有点基础才行。</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Pycharm和Idea激活]]></title>
+        <id>https://Joker6934.github.io/post/pycharm-he-idea-ji-huo/</id>
+        <link href="https://Joker6934.github.io/post/pycharm-he-idea-ji-huo/">
+        </link>
+        <updated>2021-02-04T14:00:59.000Z</updated>
+        <content type="html"><![CDATA[<!-- more -->
+<p>长期更新激活码</p>
+<p><strong><strong>使用方法</strong></strong>：</p>
+<p>1.安装（以Pycharm为例）</p>
+<p>下载地址：<a href="https://www.jetbrains.com/pycharm/">https://www.jetbrains.com/pycharm/</a></p>
+<figure data-type="image" tabindex="1"><img src="https://Joker6934.github.io//post-images/1612447429296.png" alt="" loading="lazy"></figure>
+<p>点击安装</p>
+<figure data-type="image" tabindex="2"><img src="https://Joker6934.github.io//post-images/1612447474691.png" alt="" loading="lazy"></figure>
+<p>左边专业版，右边社区版（免费），点击专业版，下载完成后右键以管理员身份运行。</p>
+<figure data-type="image" tabindex="3"><img src="https://Joker6934.github.io//post-images/1612447481709.png" alt="" loading="lazy"></figure>
+<p>选择安装地址，一路next</p>
+<figure data-type="image" tabindex="4"><img src="https://Joker6934.github.io//post-images/1612447489976.png" alt="" loading="lazy"></figure>
+<p>这里按照自己的情况选择即可</p>
+<figure data-type="image" tabindex="5"><img src="https://Joker6934.github.io//post-images/1612447496090.png" alt="" loading="lazy"></figure>
+<p>等待安装完成后，打开Pycharm，选择试用30天，新建python文件</p>
+<figure data-type="image" tabindex="6"><img src="https://Joker6934.github.io//post-images/1612447506772.png" alt="" loading="lazy"></figure>
+<figure data-type="image" tabindex="7"><img src="https://Joker6934.github.io//post-images/1612447513989.png" alt="" loading="lazy"></figure>
+<p>2.下载破解文件</p>
+<p>下载链接: <a href="https://pan.baidu.com/s/1U-mNz72ko_4HbnOFUCwdnA">https://pan.baidu.com/s/1U-mNz72ko_4HbnOFUCwdnA</a> 提取码: wr3r</p>
+<p>里面的word文档也可以参考</p>
+<p>不用解压，直接将压缩包拖进Pycharm空白界面</p>
+<figure data-type="image" tabindex="8"><img src="https://Joker6934.github.io//post-images/1612447520931.png" alt="" loading="lazy"></figure>
+<p>会开始构建文件</p>
+<figure data-type="image" tabindex="9"><img src="https://Joker6934.github.io//post-images/1612447527774.png" alt="" loading="lazy"></figure>
+<p>结束后会提示重启Pycharm</p>
+<figure data-type="image" tabindex="10"><img src="https://Joker6934.github.io//post-images/1612447534482.png" alt="" loading="lazy"></figure>
+<p>重启...</p>
+<p>然后查看剩余使用时间<img src="https://Joker6934.github.io//post-images/1612447547332.png" alt="" loading="lazy"></p>
+<p><strong><strong>完美！</strong></strong></p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[关于]]></title>
+        <id>https://Joker6934.github.io/post/about/</id>
+        <link href="https://Joker6934.github.io/post/about/">
+        </link>
+        <updated>2019-01-25T11:09:48.000Z</updated>
+        <content type="html"><![CDATA[<blockquote>
+<p>欢迎来到我的小站呀，很高兴遇见你！🤝</p>
+</blockquote>
+<h2 id="关于本站">🏠 关于本站</h2>
+<h2 id="博主是谁">👨‍💻 博主是谁</h2>
+<h2 id="兴趣爱好">⛹ 兴趣爱好</h2>
+<h2 id="联系我呀">📬 联系我呀</h2>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Hello Gridea]]></title>
         <id>https://Joker6934.github.io/post/hello-gridea/</id>

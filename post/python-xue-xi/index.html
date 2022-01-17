@@ -1,0 +1,491 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Python学习 | Jokerの小站</title>
+<link rel="shortcut icon" href="https://Joker6934.github.io//favicon.ico?v=1642430551385">
+<link href="https://cdn.jsdelivr.net/npm/remixicon@2.3.0/fonts/remixicon.css" rel="stylesheet">
+<link rel="stylesheet" href="https://Joker6934.github.io//styles/main.css">
+<link rel="alternate" type="application/atom+xml" title="Python学习 | Jokerの小站 - Atom Feed" href="https://Joker6934.github.io//atom.xml">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
+
+
+
+    <meta name="description" content="复试需要，python必须学一下，用的书是蟒蛇书，《Python编程 从入门到实践 第二版》还有《Python程序设计 第二版 董付国著》
+
+现在是2月6号了，我学到了蟒蛇书的9.3继承了，前几章还行，第八章有点难度了
+2.9
+
+今天遇到了..." />
+    <meta name="keywords" content="" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+    <script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+  </head>
+  <body>
+    <div class="main">
+      <div class="main-content">
+        <div class="site-header">
+  <a href="https://Joker6934.github.io/">
+  <img class="avatar" src="https://Joker6934.github.io//images/avatar.png?v=1642430551385" alt="">
+  </a>
+  <h1 class="site-title">
+    Jokerの小站
+  </h1>
+  <p class="site-description">
+    闲逛的世俗之人
+  </p>
+  <div class="menu-container">
+    
+      
+        <a href="/" class="menu">
+          首页
+        </a>
+      
+    
+      
+        <a href="/archives" class="menu">
+          归档
+        </a>
+      
+    
+      
+        <a href="/tags" class="menu">
+          标签
+        </a>
+      
+    
+      
+        <a href="/post/about" class="menu">
+          关于
+        </a>
+      
+    
+  </div>
+  <div class="social-container">
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+  </div>
+</div>
+
+        <div class="post-detail">
+          <article class="post">
+            <h2 class="post-title">
+              Python学习
+            </h2>
+            <div class="post-info">
+              <span>
+                2021-02-05
+              </span>
+              <span>
+                12 min read
+              </span>
+              
+            </div>
+            
+              <img class="post-feature-image" src="https://Joker6934.github.io//post-images/python-xue-xi.jpg" alt="">
+            
+            <div class="post-content-wrapper">
+              <div class="post-content">
+                <p>复试需要，python必须学一下，用的书是蟒蛇书，《Python编程 从入门到实践 第二版》还有《Python程序设计 第二版 董付国著》</p>
+<!-- more -->
+<p>现在是2月6号了，我学到了蟒蛇书的9.3继承了，前几章还行，第八章有点难度了</p>
+<h1 id="29">2.9</h1>
+<hr>
+<h2 id="今天遇到了列表的比较找到了以下有关的比较方法">今天遇到了列表的比较，找到了以下有关的比较方法：</h2>
+<p>1.列表1 == 列表2 只能比较位置字符都相等的<br>
+列表.sort()可以比较位置不等的，但是sorted（列表）更好<br>
+其实set(列表1) == set(列表2)可以判断元素是否相等，不考虑顺序</p>
+<p>2.set(列表1).issubset(set(列表2))判断列表1是否在列表2中</p>
+<p>3.set(列表2).issuperset(set(列表1))判断列表2是否包含列表1</p>
+<p>4.set(列表1).intersection(set(列表2))取两个列表的交集</p>
+<p>5.set(列表1).symmetric_difference(set(列表2))取两个列表的不同成员</p>
+<p>6.差集：<br>
+set(列表1).difference(set(列表2))——列表1中有，列表2中没有的<br>
+set(列表2).difference(set(列表1))——列表2中有，列表1中没有的</p>
+<p>7.set(列表1).union(set(列表2))取并集</p>
+<h2 id="代码">代码</h2>
+<pre><code>from random import choice
+
+# 验证彩票中奖很难，the_list表示彩票的序列，my_ticket表示买的彩票的序列
+the_list = []
+my_ticket = []
+lists = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 'a', 'b', 'c', 'd', 'e'] # 彩票序列从这个list中挑选
+for i in range(0, 4):
+    the_list.append(choice(lists))  # 确定the_list，即中奖彩票序列
+
+count = 1
+while True:
+    print(f&quot;This is the {count} times to try...&quot;)  # 打印第几次成功
+    for i in range(0, 4):
+        my_ticket.append(choice(lists))
+    count += 1  # 每次my_ticket确定后count加一
+    if set(my_ticket) == set(the_list):
+        print(f&quot;Congratulate! You win the first award.\n The winning sequence is {the_list}.&quot;)
+        break
+</code></pre>
+<p>害，73523次还是没有出结果，看来很难了（也可能是我代码写错了？😤）</p>
+<h2 id="改错">改错</h2>
+<p>真的是我代码写错了，调试了一下，发现在while中的那个for循环写错了，每次if之后没有重置my_ticket，这样的话，第一次my_ticket是4个元素，第二次就是8个元素了，所以应该把my_ticket = []放在for循环前面！！😭太菜了，不过话说，debug这个功能真的好用，爱死发明这个功能的人了。</p>
+<h2 id="改过的代码">改过的代码</h2>
+<pre><code>from random import choice
+
+# 验证彩票中奖很难，the_list表示彩票的序列，my_ticket表示买的彩票的序列
+the_list = []
+
+lists = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 'a', 'b', 'c', 'd', 'e']
+for i in range(0, 4):
+    the_list.append(choice(lists))  # 确定the_list，即中奖彩票序列
+print(the_list)
+count = 1
+while True:
+    print(f&quot;This is the {count} times to try...&quot;)  # 打印第几次成功
+    my_ticket = []
+    for i in range(0, 4):
+        my_ticket.append(choice(lists))
+    # print(the_list)
+    # print(my_ticket)
+    count += 1  # 每次my_ticket确定后count加一
+    if set(my_ticket) == set(the_list):
+        print(f&quot;Congratulate! You win the first award.\n The winning sequence is {the_list}.&quot;)
+        break
+# print(set(['a', 1, 4, 3]) == set([1, 3, 4, 'a']))
+
+</code></pre>
+<h2 id="结果">结果</h2>
+<pre><code>E:\Anaconda\Anaconda\envs\tensorflow\python.exe E:/Pycharm/workplace/0208/lottery.py
+['d', 9, 6, 5]
+This is the 1 times to try...
+This is the 2 times to try...
+This is the 3 times to try...
+This is the 4 times to try...
+This is the 5 times to try...
+This is the 6 times to try...
+This is the 7 times to try...
+This is the 8 times to try...
+This is the 9 times to try...
+This is the 10 times to try...
+......
+This is the 1859 times to try...
+Congratulate! You win the first award.
+ The winning sequence is ['d', 9, 6, 5].
+
+Process finished with exit code 0
+</code></pre>
+<p>所以这个15个的序列的彩票都要1859次才能买中彩票。害，可想而知双色球这种彩票（红球33个选6个，蓝球16选1）要多少次哦。难怪叫公益彩票😂</p>
+<h1 id="210">2.10</h1>
+<hr>
+<h2 id="今天遇到了关于字符串的一些问题">今天遇到了关于字符串的一些问题</h2>
+<h3 id="1字符串的rstrip和strip方法">1.字符串的rstrip()和strip()方法</h3>
+<p>直接菜鸟编程链接：<a href="https://www.runoob.com/python/att-string-rstrip.html">rstrip()方法</a>和<a href="https://www.runoob.com/python/att-string-strip.html">strip()方法</a></p>
+<pre><code>strip() 方法用于移除字符串头尾指定的字符（默认为空格或换行符）或字符序列。
+注意：该方法只能删除开头或是结尾的字符，不能删除中间部分的字符。
+rstrip() 删除 string 字符串末尾的指定字符（默认为空格)
+</code></pre>
+<h4 id="1rstrip">(1).rstrip()</h4>
+<p>str.rstrip([chars]),chars 为指定删除的字符（默认为空格）,返回删除 string 字符串末尾的指定字符后生成的新字符串。</p>
+<h4 id="2strip">(2).strip()</h4>
+<p>str.strip([chars]),chars -- 移除字符串头尾指定的字符序列,返回移除字符串头尾指定的字符生成的新字符串。</p>
+<h3 id="2readline和readlines">2.readline()和readlines()</h3>
+<p>服了，就差了一个s，我就说怎么一直只能读取文件的一行，书上还说读全部行🤧</p>
+<h1 id="211-213">2.11-2.13</h1>
+<p>三天春节休息🚌🍴🤓<br>
+出行，吃饭，看电影</p>
+<h1 id="214">2.14</h1>
+<h2 id="今天遇到了关于open函数的一些问题">今天遇到了关于open函数的一些问题</h2>
+<p>在书上对于open函数的报错条件提示的不是很清楚，有时候一个例子会报错，有时候会自动新建一个文件，这让我在对异常的处理时很糊涂。</p>
+<p>open()函数完整的语法格式为：</p>
+<pre><code>open(file, mode=‘r’, buffering=None, encoding=None, errors=None, newline=None, closefd=True)
+</code></pre>
+<p>函数定义的参数挺多，这里我们着重讲解mode——文件打开模式。mode参数有两大类，分别用来指定打开文件的文件格式和读写模式。</p>
+<p>文件格式相关参数</p>
+<p>t：以文本格式打开文件(<strong>默认</strong>)。一般用于文本文件，如：txt。<br>
+b：以二进制格式打开文件。一般用于非文本文件，如：图片。<br>
+这一类参数可以与其它的模式参数组合使用，用于指定打开文件的格式，需要根据你要打开文件的类型进行选择。</p>
+<p>读写模式相关参数</p>
+<p>r：以只读方式打开文件(<strong>默认模式</strong>)。文件指针定位在文件头的位置。如果<code>文件不存在会报错。</code><br>
+w：以只写方式打开文件。如果文件存在，则打开文件，清空文件内容，从文件头开始编辑；如果<code>文件不存在，则创建新文件，打开编辑。</code><br>
+a：以追加方式打开文件，同样是只写，不允许进行读操作。如果文件存在，则打开文件，将文件指针定位到文件尾。因此，新的内容是追加在已有内容之后。如果<code>文件不存在，则创建新文件</code>进行写入。<br>
++：打开一个文件进行更新(可读写)。<br>
+<em>注意：该模式不能单独使用，需要与r/w/a组合使用。打开文件后文件指针的位置取决于另一个组合参数。</em></p>
+<p>组合模式</p>
+<p>r+：打开一个文件用于读写。如果文件存在，则打开文件，将文件指针定位在文件头，新写入的内容在原有内容的前面；如果<code>文件不存在会报错。</code><br>
+w+：打开一个文件用于读写。如果文件存在，则打开文件，清空原有内容，进入编辑模式；如果文件不存在，则<code>创建一个新文件</code>进行读写操作。<br>
+a+：以追加模式打开一个文件用于读写。如果文件存在，则打开文件，将文件指针定位在文件尾，新写入的内容在原有内容的后面；如果<code>文件不存在，则创建一个新文件</code>用于读写。</p>
+<h3 id="所以只有在读或者读写时文件不存在会报错其他都会直接创建一个新的文件">所以只有在<strong>读或者读写</strong>时，文件不存在<strong>会报错</strong>，其他都会直接创建一个新的文件</h3>
+<h1 id="215">2.15</h1>
+<p>今天写的格外顺畅，没有出现什么问题，可能是我写的有点少，才写了两个课后练习。<br>
+感觉第9章的类有点忘记了，特别时那些__init__什么的，还有什么实列属性什么的😱<br>
+等我把第11章看完，第一部分结束后在来一边复习吧，太慢了啊喂</p>
+<h1 id="216">2.16</h1>
+<h2 id="今天开始第11章顺便复习了一下第9章">今天开始第11章，顺便复习了一下第9章</h2>
+<p>Ok，结束了第11章，现在开始第二部分，开始做一个书上的游戏项目😁</p>
+<h1 id="217">2.17</h1>
+<h2 id="今天遇到了关于pygame的屏幕和背景的一些小问题">今天遇到了关于pygame的屏幕和背景的一些小问题</h2>
+<p>动态屏幕大小的背景，更改书上的代码使更简洁<br>
+在飞船移动的时候出现了问题，在设计了可变飞船移速的时候不能动了，然后就觉得是传递float变量值的时候出错了，果然，把它注释掉就可以动了，但是发现左右移动速度不一样（这样的问题海星），然后仔细比对发现是我看错了，把self.x写成了self.rect.x了。服了。</p>
+<h1 id="219">2.19</h1>
+<h2 id="结束了外星人的项目蟒蛇书后面的图表可视化什么的现在先不看了">结束了外星人的项目，蟒蛇书后面的图表可视化什么的，现在先不看了</h2>
+<p>开始Python程序设计的复习了，现在离出成绩还有一个星期左右，离复试还有一个月左右，加油加油加油！！！</p>
+<h1 id="220">2.20</h1>
+<p>今天先把论文开题报告写了一半，明天写好先给老师看一下吧，离结束日期还有8天，还来得及。具体实现要抓紧了，因为复试面试也差不多要中期检查了</p>
+<h1 id="32">3.2</h1>
+<p>现在在学校里了，昨天就写了05年的真题，但是太菜了，2个小时才写了一道题，而且感觉不是很优秀的解决方案，今天看了一下还是没有什么能改进的。<br>
+前几天把论文写好了，然后这些天感觉就没有好好学习了，现在到复试还剩下不到一个月了，一定要好好弄，进了复试（74名就很迷，太菜了）就不能留遗憾。<br>
+现在就按照计划一步步来吧，认真对待才能有所成绩！！！</p>
+<h2 id="一-read-readline和readlines的区别">一. read() readline()和readlines()的区别</h2>
+<h3 id="1read">1.read()</h3>
+<p>特点是：读取整个文件，将文件内容放到一个<strong>字符串变量</strong>中。<br>
+劣势是：如果文件非常大，尤其是大于内存时，无法使用read()方法。<br>
+read()直接读取字节到字符串中，包括了换行符</p>
+<h3 id="2readline">2.readline()</h3>
+<p>特点：readline()方法每次读取<strong>一行</strong>；返回的是一个字符串对象，保持当前行的内存<br>
+缺点：比readlines慢得多<br>
+readline()  读取整行，包括行结束符，并作为字符串返回</p>
+<h3 id="3readlines">3.readlines()</h3>
+<p>特点：一次性读取整个文件；自动将文件内容分析成一个行的列表。<br>
+readlines()读取所有行然后把它们作为一个字符串<strong>列表</strong>返回。</p>
+<h3 id="split只能对字符串进行拆分">split()只能对字符串进行拆分</h3>
+<h2 id="二-进制转换">二. 进制转换</h2>
+<p>使用Python内置函数：bin()、oct()、int()、hex()可实现进制转换。</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">⬇️</th>
+<th style="text-align:center">2进制</th>
+<th style="text-align:center">8进制</th>
+<th style="text-align:center">10进制</th>
+<th style="text-align:center">16进制</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">2进制</td>
+<td style="text-align:center"></td>
+<td style="text-align:center">bin(int(x, 8))</td>
+<td style="text-align:center">bin(int(x, 10))</td>
+<td style="text-align:center">bin(int(x, 16))</td>
+</tr>
+<tr>
+<td style="text-align:center">8进制</td>
+<td style="text-align:center">oct(int(x, 2))</td>
+<td style="text-align:center"></td>
+<td style="text-align:center">oct(int(x, 10))</td>
+<td style="text-align:center">oct(int(x, 16))</td>
+</tr>
+<tr>
+<td style="text-align:center">10进制</td>
+<td style="text-align:center">int(x, 2)</td>
+<td style="text-align:center">int(x, 8)</td>
+<td style="text-align:center"></td>
+<td style="text-align:center">int(x, 16)</td>
+</tr>
+<tr>
+<td style="text-align:center">16进制</td>
+<td style="text-align:center">hex(int(x, 2))</td>
+<td style="text-align:center">hex(int(x, 8))</td>
+<td style="text-align:center">hex(int(x, 10))</td>
+<td style="text-align:center"></td>
+</tr>
+</tbody>
+</table>
+<h2 id="三replace函数">三.replace()函数</h2>
+<p><code>s1.replace(s2, s3) # 将s1中的s2用s3替换掉</code><br>
+还有两种方式可以替换字符串的内容<br>
+<img src="https://Joker6934.github.io//post-images/1614689169256.png" alt="" loading="lazy"></p>
+<h1 id="33">3.3</h1>
+<h2 id="字符串转换为二进制">字符串转换为二进制</h2>
+<p><img src="https://Joker6934.github.io//post-images/1614859284290.png" alt="" loading="lazy"><br>
+或者<br>
+<img src="https://Joker6934.github.io//post-images/1614859460814.png" alt="" loading="lazy"></p>
+<h1 id="37">3.7</h1>
+<p>好几天没有好好学习了，今天开始到复试都不能在瞎搞了！！！！<br>
+今天遇到了异或的问题</p>
+<h2 id="1整数类型能不能异或">1.整数类型能不能异或</h2>
+<p>---&gt;可以直接异或，他会自动先转换为二进制，运算完成后，会自动转换为整数类型&lt;---<br>
+<img src="https://Joker6934.github.io//post-images/1615106737727.png" alt="" loading="lazy"></p>
+
+              </div>
+              <div class="toc-container">
+                <ul class="markdownIt-TOC">
+<li><a href="#29">2.9</a>
+<ul>
+<li><a href="#%E4%BB%8A%E5%A4%A9%E9%81%87%E5%88%B0%E4%BA%86%E5%88%97%E8%A1%A8%E7%9A%84%E6%AF%94%E8%BE%83%E6%89%BE%E5%88%B0%E4%BA%86%E4%BB%A5%E4%B8%8B%E6%9C%89%E5%85%B3%E7%9A%84%E6%AF%94%E8%BE%83%E6%96%B9%E6%B3%95">今天遇到了列表的比较，找到了以下有关的比较方法：</a></li>
+<li><a href="#%E4%BB%A3%E7%A0%81">代码</a></li>
+<li><a href="#%E6%94%B9%E9%94%99">改错</a></li>
+<li><a href="#%E6%94%B9%E8%BF%87%E7%9A%84%E4%BB%A3%E7%A0%81">改过的代码</a></li>
+<li><a href="#%E7%BB%93%E6%9E%9C">结果</a></li>
+</ul>
+</li>
+<li><a href="#210">2.10</a>
+<ul>
+<li><a href="#%E4%BB%8A%E5%A4%A9%E9%81%87%E5%88%B0%E4%BA%86%E5%85%B3%E4%BA%8E%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E4%B8%80%E4%BA%9B%E9%97%AE%E9%A2%98">今天遇到了关于字符串的一些问题</a>
+<ul>
+<li><a href="#1%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84rstrip%E5%92%8Cstrip%E6%96%B9%E6%B3%95">1.字符串的rstrip()和strip()方法</a>
+<ul>
+<li><a href="#1rstrip">(1).rstrip()</a></li>
+<li><a href="#2strip">(2).strip()</a></li>
+</ul>
+</li>
+<li><a href="#2readline%E5%92%8Creadlines">2.readline()和readlines()</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#211-213">2.11-2.13</a></li>
+<li><a href="#214">2.14</a>
+<ul>
+<li><a href="#%E4%BB%8A%E5%A4%A9%E9%81%87%E5%88%B0%E4%BA%86%E5%85%B3%E4%BA%8Eopen%E5%87%BD%E6%95%B0%E7%9A%84%E4%B8%80%E4%BA%9B%E9%97%AE%E9%A2%98">今天遇到了关于open函数的一些问题</a>
+<ul>
+<li><a href="#%E6%89%80%E4%BB%A5%E5%8F%AA%E6%9C%89%E5%9C%A8%E8%AF%BB%E6%88%96%E8%80%85%E8%AF%BB%E5%86%99%E6%97%B6%E6%96%87%E4%BB%B6%E4%B8%8D%E5%AD%98%E5%9C%A8%E4%BC%9A%E6%8A%A5%E9%94%99%E5%85%B6%E4%BB%96%E9%83%BD%E4%BC%9A%E7%9B%B4%E6%8E%A5%E5%88%9B%E5%BB%BA%E4%B8%80%E4%B8%AA%E6%96%B0%E7%9A%84%E6%96%87%E4%BB%B6">所以只有在<strong>读或者读写</strong>时，文件不存在<strong>会报错</strong>，其他都会直接创建一个新的文件</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#215">2.15</a></li>
+<li><a href="#216">2.16</a>
+<ul>
+<li><a href="#%E4%BB%8A%E5%A4%A9%E5%BC%80%E5%A7%8B%E7%AC%AC11%E7%AB%A0%E9%A1%BA%E4%BE%BF%E5%A4%8D%E4%B9%A0%E4%BA%86%E4%B8%80%E4%B8%8B%E7%AC%AC9%E7%AB%A0">今天开始第11章，顺便复习了一下第9章</a></li>
+</ul>
+</li>
+<li><a href="#217">2.17</a>
+<ul>
+<li><a href="#%E4%BB%8A%E5%A4%A9%E9%81%87%E5%88%B0%E4%BA%86%E5%85%B3%E4%BA%8Epygame%E7%9A%84%E5%B1%8F%E5%B9%95%E5%92%8C%E8%83%8C%E6%99%AF%E7%9A%84%E4%B8%80%E4%BA%9B%E5%B0%8F%E9%97%AE%E9%A2%98">今天遇到了关于pygame的屏幕和背景的一些小问题</a></li>
+</ul>
+</li>
+<li><a href="#219">2.19</a>
+<ul>
+<li><a href="#%E7%BB%93%E6%9D%9F%E4%BA%86%E5%A4%96%E6%98%9F%E4%BA%BA%E7%9A%84%E9%A1%B9%E7%9B%AE%E8%9F%92%E8%9B%87%E4%B9%A6%E5%90%8E%E9%9D%A2%E7%9A%84%E5%9B%BE%E8%A1%A8%E5%8F%AF%E8%A7%86%E5%8C%96%E4%BB%80%E4%B9%88%E7%9A%84%E7%8E%B0%E5%9C%A8%E5%85%88%E4%B8%8D%E7%9C%8B%E4%BA%86">结束了外星人的项目，蟒蛇书后面的图表可视化什么的，现在先不看了</a></li>
+</ul>
+</li>
+<li><a href="#220">2.20</a></li>
+<li><a href="#32">3.2</a>
+<ul>
+<li><a href="#%E4%B8%80-read-readline%E5%92%8Creadlines%E7%9A%84%E5%8C%BA%E5%88%AB">一. read() readline()和readlines()的区别</a>
+<ul>
+<li><a href="#1read">1.read()</a></li>
+<li><a href="#2readline">2.readline()</a></li>
+<li><a href="#3readlines">3.readlines()</a></li>
+<li><a href="#split%E5%8F%AA%E8%83%BD%E5%AF%B9%E5%AD%97%E7%AC%A6%E4%B8%B2%E8%BF%9B%E8%A1%8C%E6%8B%86%E5%88%86">split()只能对字符串进行拆分</a></li>
+</ul>
+</li>
+<li><a href="#%E4%BA%8C-%E8%BF%9B%E5%88%B6%E8%BD%AC%E6%8D%A2">二. 进制转换</a></li>
+<li><a href="#%E4%B8%89replace%E5%87%BD%E6%95%B0">三.replace()函数</a></li>
+</ul>
+</li>
+<li><a href="#33">3.3</a>
+<ul>
+<li><a href="#%E5%AD%97%E7%AC%A6%E4%B8%B2%E8%BD%AC%E6%8D%A2%E4%B8%BA%E4%BA%8C%E8%BF%9B%E5%88%B6">字符串转换为二进制</a></li>
+</ul>
+</li>
+<li><a href="#37">3.7</a>
+<ul>
+<li><a href="#1%E6%95%B4%E6%95%B0%E7%B1%BB%E5%9E%8B%E8%83%BD%E4%B8%8D%E8%83%BD%E5%BC%82%E6%88%96">1.整数类型能不能异或</a></li>
+</ul>
+</li>
+</ul>
+
+              </div>
+            </div>
+          </article>
+        </div>
+
+        
+          <div class="next-post">
+            <div class="next">下一篇</div>
+            <a href="https://Joker6934.github.io/post/grideagithubping-lun-xi-tong/">
+              <h3 class="post-title">
+                Gridea+Github+Gitalk评论系统
+              </h3>
+            </a>
+          </div>
+        
+
+        
+          
+            <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+
+<div id="gitalk-container"></div>
+
+<script>
+
+  var gitalk = new Gitalk({
+    clientID: 'c48820c82bc8d74e8ab1',
+    clientSecret: '428543d4dd2d5b806831e143774de020cd20a498',
+    repo: 'Joker6934.github.io',
+    owner: 'Joker6934',
+    admin: ['Joker6934'],
+    id: (location.pathname).substring(0, 49),      // Ensure uniqueness and length less than 50
+    distractionFreeMode: false  // Facebook-like distraction free mode
+  })
+
+  gitalk.render('gitalk-container')
+
+</script>
+
+          
+
+          
+        
+
+        <div class="site-footer">
+  Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a>
+  <a class="rss" href="https://Joker6934.github.io//atom.xml" target="_blank">
+    <i class="ri-rss-line"></i> RSS
+  </a>
+</div>
+
+      </div>
+    </div>
+
+    <script>
+      hljs.initHighlightingOnLoad()
+
+      let mainNavLinks = document.querySelectorAll(".markdownIt-TOC a");
+
+      // This should probably be throttled.
+      // Especially because it triggers during smooth scrolling.
+      // https://lodash.com/docs/4.17.10#throttle
+      // You could do like...
+      // window.addEventListener("scroll", () => {
+      //    _.throttle(doThatStuff, 100);
+      // });
+      // Only not doing it here to keep this Pen dependency-free.
+
+      window.addEventListener("scroll", event => {
+        let fromTop = window.scrollY;
+
+        mainNavLinks.forEach((link, index) => {
+          let section = document.getElementById(decodeURI(link.hash).substring(1));
+          let nextSection = null
+          if (mainNavLinks[index + 1]) {
+            nextSection = document.getElementById(decodeURI(mainNavLinks[index + 1].hash).substring(1));
+          }
+          if (section.offsetTop <= fromTop) {
+            if (nextSection) {
+              if (nextSection.offsetTop > fromTop) {
+                link.classList.add("current");
+              } else {
+                link.classList.remove("current");    
+              }
+            } else {
+              link.classList.add("current");
+            }
+          } else {
+            link.classList.remove("current");
+          }
+        });
+      });
+
+    </script>
+  </body>
+</html>
