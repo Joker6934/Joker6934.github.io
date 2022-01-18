@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://Joker6934.github.io/</id>
     <title>Jokerの小站</title>
-    <updated>2022-01-17T16:12:15.222Z</updated>
+    <updated>2022-01-18T15:03:03.377Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://Joker6934.github.io/"/>
     <link rel="self" href="https://Joker6934.github.io/atom.xml"/>
@@ -10,6 +10,46 @@
     <logo>https://Joker6934.github.io/images/avatar.png</logo>
     <icon>https://Joker6934.github.io/favicon.ico</icon>
     <rights>All rights reserved 2022, Jokerの小站</rights>
+    <entry>
+        <title type="html"><![CDATA[C++学习]]></title>
+        <id>https://Joker6934.github.io/post/cxue-xi/</id>
+        <link href="https://Joker6934.github.io/post/cxue-xi/">
+        </link>
+        <updated>2022-01-18T12:33:21.000Z</updated>
+        <content type="html"><![CDATA[<h1 id="220118">220118</h1>
+<h3 id="1c强制类型转换的相关规则">1.<a href="https://blog.csdn.net/q610098308/article/details/115915802">C++强制类型转换</a>的相关规则。</h3>
+<h3 id="2c11引入了enum-class类型来替代enum这样在使用时加上即可如下">2.C++11引入了enum class类型来替代enum，这样在使用时加上&quot;::&quot;即可,如下</h3>
+<pre><code>#include&lt;iostream&gt;
+using namespace std;
+
+enum class GameResult { WIN, LOSE, TIE, CANCEL };
+
+int main() {
+	
+	GameResult result;
+	enum GameResult omit = GameResult::CANCEL;
+
+	for (int count = int(GameResult::WIN); count &lt;= int(GameResult::CANCEL); count++) {
+		result = GameResult(count);
+		if (result == omit)
+			cout &lt;&lt; &quot;The game was cancelled&quot; &lt;&lt; endl;
+		else {
+			cout &lt;&lt; &quot;The game was played&quot;;
+			if (result == GameResult::WIN)
+				cout &lt;&lt; &quot; and we won!&quot;;
+			if (result == GameResult::LOSE)
+				cout &lt;&lt; &quot; and we lost.&quot;;
+			cout &lt;&lt; endl;
+		}
+	}
+
+	//system(&quot;pause&quot;);
+	return 0;
+}
+</code></pre>
+<h3 id="3">3.</h3>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Anaconda安装和Tensorflow的配置]]></title>
         <id>https://Joker6934.github.io/post/anaconda-an-zhuang-he-tensorflow-de-pei-zhi/</id>

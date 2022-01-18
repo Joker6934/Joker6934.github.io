@@ -5,7 +5,7 @@
     
 <meta charset="utf-8" >
 
-<title>漫漫Tensorflow求学之路 | Jokerの小站</title>
+<title>C++学习 | Jokerの小站</title>
 <meta name="description" content="闲逛的世俗之人">
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
@@ -80,26 +80,63 @@
       <div class="content-container">
         <div class="post-detail">
           
-            <div class="feature-container" style="background-image: url('https://Joker6934.github.io//post-images/man-man-tensorflow-qiu-xue-zhi-lu.jpg')">
-            </div>
-          
-          <h2 class="post-title">漫漫Tensorflow求学之路</h2>
+          <h2 class="post-title">C++学习</h2>
           <div class="post-info post-detail-info">
-            <span><i class="icon-calendar-outline"></i> 2021-02-04</span>
+            <span><i class="icon-calendar-outline"></i> 2022-01-18</span>
+            
+              <span>
+                <i class="icon-pricetags-outline"></i>
+                
+                  <a href="https://Joker6934.github.io/tag/pUW-9EP-2/">
+                    C++
+                    
+                  </a>
+                
+              </span>
             
           </div>
           <div class="post-content">
-            <h1 id="准备工作">准备工作</h1>
-<p>先学着B站的视频吴恩达深度学习课程，感觉他讲的不错，比北大那个教授教的要清楚一点，北大那个要有点基础才行。</p>
+            <h1 id="220118">220118</h1>
+<h3 id="1c强制类型转换的相关规则">1.<a href="https://blog.csdn.net/q610098308/article/details/115915802">C++强制类型转换</a>的相关规则。</h3>
+<h3 id="2c11引入了enum-class类型来替代enum这样在使用时加上即可如下">2.C++11引入了enum class类型来替代enum，这样在使用时加上&quot;::&quot;即可,如下</h3>
+<pre><code>#include&lt;iostream&gt;
+using namespace std;
+
+enum class GameResult { WIN, LOSE, TIE, CANCEL };
+
+int main() {
+	
+	GameResult result;
+	enum GameResult omit = GameResult::CANCEL;
+
+	for (int count = int(GameResult::WIN); count &lt;= int(GameResult::CANCEL); count++) {
+		result = GameResult(count);
+		if (result == omit)
+			cout &lt;&lt; &quot;The game was cancelled&quot; &lt;&lt; endl;
+		else {
+			cout &lt;&lt; &quot;The game was played&quot;;
+			if (result == GameResult::WIN)
+				cout &lt;&lt; &quot; and we won!&quot;;
+			if (result == GameResult::LOSE)
+				cout &lt;&lt; &quot; and we lost.&quot;;
+			cout &lt;&lt; endl;
+		}
+	}
+
+	//system(&quot;pause&quot;);
+	return 0;
+}
+</code></pre>
+<h3 id="3">3.</h3>
 
           </div>
         </div>
 
         
           <div class="next-post">
-            <a class="purple-link" href="https://Joker6934.github.io/post/pycharm-he-idea-ji-huo/">
+            <a class="purple-link" href="https://Joker6934.github.io/post/anaconda-an-zhuang-he-tensorflow-de-pei-zhi/">
               <h3 class="post-title">
-                下一篇：Pycharm和Idea激活
+                下一篇：Anaconda安装和Tensorflow的配置
               </h3>
             </a>
           </div>
