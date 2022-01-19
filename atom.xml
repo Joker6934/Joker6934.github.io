@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://Joker6934.github.io/</id>
     <title>Jokerの小站</title>
-    <updated>2022-01-18T15:03:03.377Z</updated>
+    <updated>2022-01-19T12:02:41.619Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://Joker6934.github.io/"/>
     <link rel="self" href="https://Joker6934.github.io/atom.xml"/>
@@ -47,7 +47,9 @@ int main() {
 	return 0;
 }
 </code></pre>
-<h3 id="3">3.</h3>
+<h1 id="220119">220119</h1>
+<h3 id="1水平制表符就是按键tab-作用是按一次tab键光标就自动定位到下一个制表符的位置而且在一个制表符宽度范围内增加或者删除文字不会影响下一制表符中的文字位置">1.水平制表符就是按键Tab。 作用是：按一次tab键，光标就自动定位到下一个制表符的位置，而且在一个制表符宽度范围内，增加或者删除文字不会影响下一制表符中的文字位置。</h3>
+<h3 id="2-它的作用是让v后面的字符从下一行开始输出且开始的列数为v前一个字符所在列后面一列">2. 它的作用是让‘v’后面的字符从下一行开始输出，且开始的列数为“v”前一个字符所在列后面一列。</h3>
 ]]></content>
     </entry>
     <entry>
